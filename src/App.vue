@@ -6,6 +6,7 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import HelloWorld from './components/HelloWorld.vue';
+import './assets/index.css';
 
 @Options({
   components: {
@@ -16,6 +17,8 @@ export default class App extends Vue {}
 </script>
 
 <style>
+@import "assets/index.css";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
