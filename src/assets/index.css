@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+
+html {
+    background-color: theme('colors.background');
+}
+
+h1 {
+    color: theme('colors.primary');
+}
+
+h3 {
+    color: theme('colors.secondary')
+}
+
+
 @responsive {
     .w-paper {
         width: 8.5in;
