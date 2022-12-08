@@ -3,7 +3,7 @@
     class="flex flex-col items-stretch mx-auto w-full paper:w-paper print:w-print transform xl:scale-120 2xl:scale-10 3xl:scale-160 origin-top"
   >
     <div
-      class="paper-page flex flex-col h-auto paper:h-paper print:h-paper my-0 paper:my-20 print:my-0 p-4 sm:p-10 paper:p-20 print:p-20 text-xl md:text-base print:text-base shadow-none paper:shadow-2xl print:shadow-none bg-ivory print:bg-transparent text-left"
+      class="paper-page flex flex-col h-auto paper:h-paper print:h-paper my-0 paper:my-20 print:my-0 p-4 sm:p-10 paper:p-20 paper:justify-center print:p-20 text-xl md:text-base print:text-base shadow-none paper:shadow-2xl print:shadow-none bg-ivory print:bg-transparent text-left"
     >
       <section
         id="header"
@@ -14,9 +14,11 @@
 
       <section class="flex flex-col mt-4">
         <div>
-          <ul class="flex flex-row justify-start space-x-10">
+          <ul
+            class="flex flex-col md:flex-row print:flex-row justify-start md:space-x-10 print:space-x-10"
+          >
             <li>
-              <font-awesome-icon icon="fa-solid fa-location-pin" />
+              <font-awesome-icon icon="fa-solid fa-location-dot" />
               Providence, RI
             </li>
             <li>
@@ -30,41 +32,18 @@
         </div>
 
         <div class="grid grid-cols-2">
-          <div>
-            <h2>Skills</h2>
-            <ul class="grid grid-cols-4 pr-10">
-              <li v-for="skill in skills" :key="skill">{{ skill }}</li>
-            </ul>
-          </div>
+          <ResumeSkillSection title="Skills" :skills="skills" />
 
-          <div>
-            <h2>Frameworks</h2>
-            <ul class="grid grid-cols-4 pr-10">
-              <li v-for="framework in frameworks" :key="framework">
-                {{ framework }}
-              </li>
-            </ul>
-          </div>
+          <ResumeSkillSection title="Frameworks" :skills="frameworks" />
         </div>
 
         <div class="grid grid-cols-2">
-          <div>
-            <h2>Design</h2>
-            <ul class="grid grid-cols-4 pr-10">
-              <li v-for="d in design" :key="d">
-                {{ d }}
-              </li>
-            </ul>
-          </div>
+          <ResumeSkillSection title="Design" :skills="design" />
 
-          <div>
-            <h2>Project Management</h2>
-            <ul class="grid grid-cols-4 pr-10">
-              <li v-for="pm in projectMgmt" :key="pm">
-                {{ pm }}
-              </li>
-            </ul>
-          </div>
+          <ResumeSkillSection
+            title="Project Management"
+            :skills="projectMgmt"
+          />
         </div>
 
         <div id="experience">
@@ -117,8 +96,11 @@
 </template>
 
 <script lang="ts">
+import ResumeSkillSection from "@/components/ResumeSkillSection.vue";
+
 export default {
   name: "ResumeTemplate",
+  components: { ResumeSkillSection },
   data() {
     return {
       experience: [

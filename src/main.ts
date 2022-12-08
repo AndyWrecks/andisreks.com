@@ -11,11 +11,11 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 /* import specific icons */
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faLocationPin } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 /* add icons to the library */
-library.add(faEnvelope, faLinkedin, faLocationPin);
+library.add(faEnvelope, faLinkedin, faLocationDot);
 
 createApp(App)
   .component("font-awesome-icon", FontAwesomeIcon)
