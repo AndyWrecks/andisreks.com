@@ -1,12 +1,25 @@
 <template>
-  <nav class="print:hidden">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/resume">Resume</router-link>
-  </nav>
-  <v-icon icon="mdi-home" />
-  git
-  <router-view />
+  <v-app>
+    <v-layout>
+      <v-app-bar>
+        <nav class="print:hidden">
+          <v-icon icon="mdi-home" />
+          <router-link to="/">Home</router-link> |
+          <router-link to="/about">About</router-link> |
+          <router-link to="/resume">Resume</router-link>
+        </nav>
+      </v-app-bar>
+
+      <v-navigation-drawer
+        color="grey-darken-2"
+        permanent
+      ></v-navigation-drawer>
+
+      <v-main>
+        <router-view />
+      </v-main>
+    </v-layout>
+  </v-app>
 </template>
 
 <style>
