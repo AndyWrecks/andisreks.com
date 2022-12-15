@@ -1,9 +1,9 @@
 <template>
   <div
-    class="flex flex-col items-stretch mx-auto w-full paper:w-paper print:w-print transform xl:scale-120 2xl:scale-10 3xl:scale-160 origin-top"
+    class="flex flex-col items-stretch mx-auto w-full mb-25 pb-20 print:mb-0 print:pb-0 paper:w-paper print:w-print transform origin-top"
   >
     <div
-      class="paper-page flex flex-col h-auto paper:h-paper print:h-paper my-0 paper:my-20 print:my-0 p-4 sm:p-10 paper:p-20 paper:justify-center print:p-20 text-xl md:text-base print:text-base shadow-none paper:shadow-2xl print:shadow-none bg-ivory print:bg-transparent text-left"
+      class="paper-page flex flex-col h-auto paper:h-paper print:h-paper my-0 paper:my-20 print:my-0 p-4 sm:p-10 paper:p-20 paper:justify-center print:p-10 text-xl md:text-base print:text-base shadow-none paper:shadow-2xl print:shadow-none bg-ivory print:bg-transparent text-left"
     >
       <section
         id="header"
@@ -183,8 +183,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-html {
-  font-size: 12px;
+@media print {
+  html {
+    font-size: 12px !important;
+  }
 }
 
 h1,
