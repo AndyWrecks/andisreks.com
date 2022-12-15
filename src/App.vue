@@ -1,21 +1,23 @@
 <template>
   <v-app>
     <v-layout>
-      <v-app-bar>
-        <nav class="print:hidden">
-          <v-icon icon="mdi-home" />
-          <router-link to="/">Home</router-link> |
-          <router-link to="/about">About</router-link> |
-          <router-link to="/resume">Resume</router-link>
-        </nav>
-      </v-app-bar>
+      <div class="print:hidden">
+        <v-app-bar>
+          <nav class="flex flex-row items-baseline">
+            <span class="text-primary text-xl mr-6"
+              >Andis<span class="text-secondary">Reks</span></span
+            >
 
-      <v-navigation-drawer
-        color="grey-darken-2"
-        permanent
-      ></v-navigation-drawer>
+            <router-link to="/">Home</router-link> |
+            <router-link to="/about">About</router-link> |
+            <router-link to="/resume">Resume</router-link>
+          </nav>
+        </v-app-bar>
+      </div>
 
-      <v-main>
+      <!--      <v-navigation-drawer color="grey-darken-2"></v-navigation-drawer>-->
+
+      <v-main class="print:pt-0">
         <router-view />
       </v-main>
     </v-layout>
