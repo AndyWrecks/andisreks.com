@@ -59,7 +59,25 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 /* add icons to the library */
 library.add(faEnvelope, faLinkedin, faLocationDot);
 
+import { InjectionKey } from "vue";
+import { createStore, Store } from "vuex";
+
+// define your typings for the store state
+export interface State {
+  count: number;
+}
+
+// define injection key
+export const key: InjectionKey<Store<State>> = Symbol();
+
+export const store = createStore<State>({
+  state: {
+    count: 0,
+  },
+});
+
 createApp(App)
+  .use(store)
   .component("font-awesome-icon", FontAwesomeIcon)
   .use(router)
   .use(vuetify)
