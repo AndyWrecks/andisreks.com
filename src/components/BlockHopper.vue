@@ -9,6 +9,7 @@ const canvasWidth = 600;
 const canvasHeight = 400;
 let fallSpeed = 0;
 let isJumping = false;
+let isFalling = true;
 let jumpSpeed = 0;
 
 const gameCanvas = {
@@ -44,6 +45,7 @@ export default defineComponent({
 
       this.makeFall = function () {
         if (!isJumping) {
+          isFalling = true;
           this.y += fallSpeed;
           fallSpeed += 0.1;
           this.stopPlayer();
@@ -53,6 +55,7 @@ export default defineComponent({
       this.stopPlayer = function () {
         const ground = canvasHeight - this.height;
 
+        isFalling = false;
         if (this.y > ground) {
           this.y = ground;
         }
@@ -62,6 +65,7 @@ export default defineComponent({
         if (isJumping) {
           this.y -= jumpSpeed;
           jumpSpeed += 0.3;
+          fallSpeed = 0;
         }
       };
     },
@@ -80,7 +84,10 @@ export default defineComponent({
           return;
         }
 
-        if (event.code === "Space") {
+        console.log({ isFalling });
+        console.log({ isJumping });
+
+        if (event.code === "Space" && (!isJumping || !isFalling)) {
           isJumping = true;
           setTimeout(function () {
             resetJump();
