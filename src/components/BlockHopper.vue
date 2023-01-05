@@ -23,6 +23,10 @@ const gameCanvas = {
   },
 };
 
+const randomNumber = function (min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
 export default defineComponent({
   name: "BlockHopper",
   methods: {
@@ -47,7 +51,7 @@ export default defineComponent({
         if (!isJumping) {
           isFalling = true;
           this.y += fallSpeed;
-          fallSpeed += 0.1;
+          fallSpeed += 0.2;
           this.stopPlayer();
         }
       };
@@ -69,6 +73,34 @@ export default defineComponent({
         }
       };
     },
+
+    createBlock: function () {
+      let width = randomNumber(10, 50);
+      let height = randomNumber(10, 200);
+      let speed = randomNumber(2, 6);
+
+      this.x = canvasWidth;
+      this.y = canvasHeight - height;
+
+      this.draw = function () {
+        const ctx = gameCanvas.context;
+        ctx.fillStyle = "red";
+        ctx.fillRect(this.x, this.y, width, height);
+      };
+      this.returnToAttackPosition = function () {
+        if (this.x < 0) {
+          width = randomNumber(10, 50);
+          height = randomNumber(50, 200);
+          speed = randomNumber(4, 6);
+          this.y = canvasHeight - height;
+          this.x = canvasWidth;
+        }
+      };
+      this.attackPlayer = function () {
+        this.x -= speed;
+        this.returnToAttackPosition();
+      };
+    },
     resetJump: function () {
       jumpSpeed = 0;
       isJumping = false;
@@ -76,6 +108,8 @@ export default defineComponent({
     startGame: function () {
       this.initGameCanvas();
       this.player = new this.createPlayer(30, 30, 10);
+      this.block = new this.createBlock();
+
       setInterval(this.updateCanvas, 20);
       const resetJump = this.resetJump;
 
@@ -83,9 +117,6 @@ export default defineComponent({
         if (event.defaultPrevented) {
           return;
         }
-
-        console.log({ isFalling });
-        console.log({ isJumping });
 
         if (event.code === "Space" && (!isJumping || !isFalling)) {
           isJumping = true;
@@ -102,6 +133,9 @@ export default defineComponent({
       this.player.makeFall();
       this.player.draw();
       this.player.jump();
+
+      this.block.draw();
+      this.block.attackPlayer();
     },
   },
   mounted() {
