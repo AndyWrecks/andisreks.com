@@ -11,6 +11,7 @@ let fallSpeed = 0;
 let isJumping = false;
 let isFalling = true;
 let jumpSpeed = 0;
+let score = 0;
 
 const gameCanvas = {
   canvas: document.createElement("canvas"),
@@ -32,6 +33,17 @@ export default defineComponent({
   methods: {
     initGameCanvas: () => {
       gameCanvas.start();
+    },
+    createScoreLabel: function (x, y) {
+      this.score = 0;
+      this.x = x;
+      this.y = y;
+      this.draw = function () {
+        const ctx = gameCanvas.context;
+        ctx.font = "25px Marker Felt";
+        ctx.fillStyle = "black";
+        ctx.fillText(this.text, this.x, this.y);
+      };
     },
     createPlayer: function (width, height, x) {
       const playerYPosition = 200;
@@ -94,6 +106,7 @@ export default defineComponent({
           speed = randomNumber(4, 6);
           this.y = canvasHeight - height;
           this.x = canvasWidth;
+          score++;
         }
       };
       this.attackPlayer = function () {
@@ -109,6 +122,7 @@ export default defineComponent({
       this.initGameCanvas();
       this.player = new this.createPlayer(30, 30, 10);
       this.block = new this.createBlock();
+      this.scoreLabel = new this.createScoreLabel(10, 30);
 
       setInterval(this.updateCanvas, 20);
       const resetJump = this.resetJump;
@@ -127,6 +141,8 @@ export default defineComponent({
       });
     },
     updateCanvas: function () {
+      this.detectCollision();
+
       const ctx = gameCanvas.context;
       ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
@@ -136,6 +152,25 @@ export default defineComponent({
 
       this.block.draw();
       this.block.attackPlayer();
+
+      this.scoreLabel.text = `Score: ${score}`;
+      this.scoreLabel.draw();
+    },
+    detectCollision: function () {
+      const playerLeft = this.player.x;
+      const playerRight = this.player.x + this.player.width;
+      const blockLeft = this.block.x;
+
+      const playerBottom = this.player.y + this.player.height;
+      const blockTop = this.block.y;
+
+      if (
+        playerRight > blockLeft &&
+        playerLeft < blockLeft &&
+        playerBottom > blockTop
+      ) {
+        gameCanvas.stop();
+      }
     },
   },
   mounted() {
