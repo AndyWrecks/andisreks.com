@@ -12,6 +12,7 @@ let isJumping = false;
 let isFalling = true;
 let jumpSpeed = 0;
 let score = 0;
+let gameStopped = false;
 
 const gameCanvas = {
   canvas: document.createElement("canvas"),
@@ -63,7 +64,7 @@ export default defineComponent({
         if (!isJumping) {
           isFalling = true;
           this.y += fallSpeed;
-          fallSpeed += 0.2;
+          fallSpeed += 1;
           this.stopPlayer();
         }
       };
@@ -71,8 +72,8 @@ export default defineComponent({
       this.stopPlayer = function () {
         const ground = canvasHeight - this.height;
 
-        isFalling = false;
         if (this.y > ground) {
+          isFalling = false;
           this.y = ground;
         }
       };
@@ -80,8 +81,12 @@ export default defineComponent({
       this.jump = function () {
         if (isJumping) {
           this.y -= jumpSpeed;
-          jumpSpeed += 0.3;
+          jumpSpeed += 1;
           fallSpeed = 0;
+
+          if (this.y <= 0) {
+            jumpSpeed = 0;
+          }
         }
       };
     },
@@ -125,6 +130,7 @@ export default defineComponent({
       this.scoreLabel = new this.createScoreLabel(10, 30);
 
       setInterval(this.updateCanvas, 20);
+
       const resetJump = this.resetJump;
 
       window.addEventListener("keydown", (event) => {
@@ -136,25 +142,27 @@ export default defineComponent({
           isJumping = true;
           setTimeout(function () {
             resetJump();
-          }, 1000);
+          }, 300);
         }
       });
     },
     updateCanvas: function () {
       this.detectCollision();
 
-      const ctx = gameCanvas.context;
-      ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+      if (!gameStopped) {
+        const ctx = gameCanvas.context;
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
-      this.player.makeFall();
-      this.player.draw();
-      this.player.jump();
+        this.player.makeFall();
+        this.player.draw();
+        this.player.jump();
 
-      this.block.draw();
-      this.block.attackPlayer();
+        this.block.draw();
+        this.block.attackPlayer();
 
-      this.scoreLabel.text = `Score: ${score}`;
-      this.scoreLabel.draw();
+        this.scoreLabel.text = `Score: ${score}`;
+        this.scoreLabel.draw();
+      }
     },
     detectCollision: function () {
       const playerLeft = this.player.x;
@@ -169,7 +177,7 @@ export default defineComponent({
         playerLeft < blockLeft &&
         playerBottom > blockTop
       ) {
-        gameCanvas.stop();
+        gameStopped = true;
       }
     },
   },
