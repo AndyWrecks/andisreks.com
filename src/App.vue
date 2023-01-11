@@ -12,7 +12,8 @@
             <router-link to="/about">About</router-link> |
             <router-link to="/media-log">Media Log</router-link> |
             <router-link to="/resume">Resume</router-link> |
-            <router-link to="/block-hopper">Block Hopper</router-link>
+            <router-link to="/block-hopper">Block Hopper</router-link> |
+            <router-link to="/posts">Posts</router-link> |
           </nav>
         </v-app-bar>
       </div>

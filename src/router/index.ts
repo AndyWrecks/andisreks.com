@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import Resume from "@/components/Resume.vue";
 import MediaLog from "@/components/MediaLog.vue";
 import BlockHopper from "@/components/BlockHopper.vue";
+import PostComponent from "@/components/PostComponent.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -30,6 +31,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/block-hopper",
     name: "blockHopper",
     component: BlockHopper,
+  },
+  {
+    path: "/posts",
+    name: "posts",
+    component: PostComponent,
   },
 ];
 

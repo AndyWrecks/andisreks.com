@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "backend": "node server/index.js",
+    "beDev": "nodemon server/index.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "deploy": "sh deploy.sh"
@@ -14,8 +16,15 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/vue-fontawesome": "^3.0.2",
+    "@types/axios": "^0.14.0",
     "autoprefixer": "^10.4.13",
+    "axios": "^1.2.2",
+    "body-parser": "^1.20.1",
     "core-js": "^3.8.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb": "^4.13.0",
     "postcss": "^8.4.19",
     "tailwindcss": "^3.2.4",
     "vue": "^3.2.13",
@@ -38,6 +47,7 @@
     "@vue/eslint-config-typescript": "^9.1.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "nodemon": "^2.0.20",
     "prettier": "^2.8.0",
     "typescript": "~4.5.5",
     "webpack-cli": "^5.0.1"
