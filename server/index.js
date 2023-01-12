@@ -10,8 +10,10 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const posts = require("./routes/api/post");
+const mediaLog = require("./routes/api/media-log");
 
 app.use("/api/post", posts);
+app.use("/api/media-log", mediaLog);
 
 // Handle production
 if (process.env.NODE_ENV === "production") {
