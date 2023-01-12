@@ -1,5 +1,6 @@
 // @ts-ignore
 import axios from "axios";
+import { TrelloList } from "@/types";
 
 const url = "api/post/";
 

@@ -1,17 +1,39 @@
-const state = {
-  count: 1,
+import { MediaLogState, State, TrelloList } from "@/types";
+import { ActionContext } from "vuex";
+import MediaLogService from "@/api/mediaLogService";
+
+const state: MediaLogState = {
+  lists: [],
 };
 
-const getters = {};
+type Context = ActionContext<MediaLogState, State>;
 
-const mutations = {};
+const getters = {
+  getLists(state: MediaLogState) {
+    return state.lists;
+  },
+};
 
-const actions = {};
+const actions = {
+  setLists(context: Context) {
+    const listData = MediaLogService.getMediaLogData();
+
+    listData.then((data: any) => {
+      context.commit("setLists", data.lists);
+    });
+  },
+};
+
+const mutations = {
+  setLists(state: MediaLogState, data: TrelloList[]) {
+    state.lists = data;
+  },
+};
 
 export default {
   state,
   getters,
   mutations,
   actions,
-  namespace: true,
+  namespaced: true,
 };
