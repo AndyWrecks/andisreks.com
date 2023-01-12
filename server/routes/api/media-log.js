@@ -16,12 +16,16 @@ const trelloConfig = {
 
 // Get
 router.get("/", async (req, res) => {
-  const posts = await loadMediaLists();
+  const lists = await loadMediaLists();
+  const items = await loadMediaCards();
 
-  res.send(await posts.find({}).toArray());
+  res.send({
+    lists: await lists.find({}).toArray(),
+    items: await items.find({}).toArray(),
+  });
 });
 
-// Add
+// Update
 router.get("/trello-fetch", async (req, res) => {
   const listCollection = await loadMediaLists();
   const cardCollections = await loadMediaCards();

@@ -11,7 +11,6 @@ class PostService {
         .get(url)
         .catch((err: any) => reject(err))
         .then((response: any) => {
-          console.log(response);
           resolve(
             response.data.map((post: any) => ({
               ...post,
@@ -19,20 +18,6 @@ class PostService {
             }))
           );
         });
-
-      //   try {
-      //     const res = await axios.get(url);
-      //     const data = res.data;
-      //     resolve(
-      //       data.map((post: any) => ({
-      //         ...post,
-      //         createdAt: new Date(post.createdAt),
-      //       }))
-      //     );
-      //   } catch (err) {
-      //     reject(err);
-      //   }
-      // });
     });
   }
 
