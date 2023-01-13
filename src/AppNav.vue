@@ -5,27 +5,7 @@
       temporary
       v-model="navOpen"
     >
-      <v-list>
-        <v-list-item><router-link to="/">Home</router-link></v-list-item>
-
-        <v-list-item><router-link to="/about">About</router-link></v-list-item>
-
-        <v-list-item
-          ><router-link to="/media-log">Media Log</router-link></v-list-item
-        >
-
-        <v-list-item
-          ><router-link to="/resume">Resume</router-link></v-list-item
-        >
-
-        <v-list-item
-          ><router-link to="/block-hopper"
-            >Block Hopper</router-link
-          ></v-list-item
-        >
-
-        <v-list-item><router-link to="/posts">Posts</router-link></v-list-item>
-      </v-list>
+      <MobileLinks :links="links" />
     </v-navigation-drawer>
 
     <v-app-bar>
@@ -36,21 +16,60 @@
         ></v-app-bar-nav-icon>
       </template>
 
-      <v-app-bar-title class="text-primary text-xl mr-6"
-        >Andis<span class="text-secondary">Reks</span>
+      <v-app-bar-title class="text-primary text-xl mr-6">
+        Andis<span class="text-secondary">Reks </span>
       </v-app-bar-title>
+
+      <template v-slot:append>
+        <div class="hidden md:block">
+          <v-btn
+            v-for="(item, index) in links.main"
+            :key="`desktop-item-main-${index}`"
+            :to="item.url"
+            >{{ item.name }}</v-btn
+          >
+        </div>
+      </template>
     </v-app-bar>
   </div>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useStore } from "vuex";
+import MobileLinks from "@/MobileLinks.vue";
 
 export default defineComponent({
   name: "AppNav",
+  components: { MobileLinks },
   data() {
     return {
       navOpen: false,
+      links: {
+        main: [
+          {
+            name: "About",
+            url: "/about",
+          },
+          {
+            name: "Resume",
+            url: "/resume",
+          },
+          {
+            name: "Media Log",
+            url: "/media-log",
+          },
+        ],
+        side: [
+          {
+            name: "Block Hopper",
+            url: "/block-hopper",
+          },
+          {
+            name: "Posts",
+            url: "/posts",
+          },
+        ],
+      },
     };
   },
   computed: {
