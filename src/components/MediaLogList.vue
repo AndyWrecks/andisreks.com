@@ -21,9 +21,6 @@ export default defineComponent({
   computed: {
     listItems: function () {
       const store = useStore();
-      console.log(this);
-      console.log(store.getters["mediaLog/getListItems"](this.listId));
-
       return store.getters["mediaLog/getListItems"](this.listId);
     },
   },

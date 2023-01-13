@@ -16,7 +16,6 @@ const getters = {
 
   getListItems(state: MediaLogState) {
     return (listId: string) => {
-      console.log({ listId });
       return state.items.filter((item) => item.idList === listId);
     };
   },

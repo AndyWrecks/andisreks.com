@@ -12,7 +12,6 @@ class MediaLogService {
         .get(url)
         .catch((err: any) => reject(err))
         .then((response: any) => {
-          console.log(response);
           resolve(response.data);
         });
     });
