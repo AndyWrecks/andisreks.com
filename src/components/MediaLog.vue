@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row class="bg-red" justify="space-around">
+    <v-row justify="space-around">
       <v-col cols="12">
         <v-card v-for="(list, index) in lists" :key="`list-${index}`">
           <v-card-title> {{ list.name }} </v-card-title>

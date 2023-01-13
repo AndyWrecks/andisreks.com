@@ -16,7 +16,14 @@ const getters = {
 
   getListItems(state: MediaLogState) {
     return (listId: string) => {
-      return state.items.filter((item) => item.idList === listId);
+      return state.items
+        .filter((item) => item.idList === listId)
+        .sort((a, b) => {
+          if (a.pos < b.pos) {
+            return -1;
+          }
+          return 0;
+        });
     };
   },
 };
