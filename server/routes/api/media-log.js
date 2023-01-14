@@ -50,6 +50,24 @@ router.get("/trello-fetch", async (req, res) => {
 
   let cards = await Promise.all(
     lists.map((list) => {
+      switch (list.id) {
+        case "61e899b24e446117eccefdfe" ||
+          "61f823d0a8608d8cdb061729" ||
+          "61e899b65407401ebac210e6":
+          list.category = "tv";
+          break;
+        case "61e8ae011c9fa274b951a554" ||
+          "61f823f6db6e233a78241815" ||
+          "61e899b093c558580b82e93d":
+          list.category = "video-games";
+          break;
+        case "61e8ada560ebc7812bbb5c03" || "61e899ae08186416d0e0ccd2":
+          list.category = "movies";
+          break;
+        default:
+          list.category = "unknown";
+      }
+
       return axios
         .get(`${trelloBaseUrl}/lists/${list.id}/cards${trelloAuth}`, {
           ...trelloConfig,

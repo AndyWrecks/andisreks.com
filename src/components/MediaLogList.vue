@@ -1,7 +1,7 @@
 <template>
   <v-list
     v-for="(listItem, index) in listItems"
-    :key="`lists-${this.id}-item-${index}`"
+    :key="`lists-${listItem.id}-item-${index}`"
   >
     <v-list-item
       :title="listItem.name"

@@ -1,5 +1,8 @@
 <template>
   <v-container>
+    <v-chip-group>
+      <v-chip>Movies</v-chip>4
+    </v-chip-group>
     <v-row justify="space-around">
       <v-col cols="12">
         <v-card v-for="(list, index) in lists" :key="`list-${index}`">

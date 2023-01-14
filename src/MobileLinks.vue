@@ -14,9 +14,6 @@ export default {
   props: {
     links: Object,
   },
-  created() {
-    console.log(this.props);
-  },
 };
 </script>
 <style>
