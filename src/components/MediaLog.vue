@@ -5,11 +5,13 @@
     </v-chip-group>
     <v-row justify="space-around">
       <v-col cols="12">
-        <MediaLogListCart
-          v-for="(list, index) in lists"
-          :key="`list-${index}`"
-          :list="list"
-        />
+        <v-sheet>
+          <MediaLogListCart
+            v-for="(list, index) in lists"
+            :key="`list-${index}`"
+            :list="list"
+          />
+        </v-sheet>
       </v-col>
     </v-row>
   </v-container>
