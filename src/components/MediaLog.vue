@@ -1,15 +1,15 @@
 <template>
   <v-container>
     <v-chip-group>
-      <v-chip>Movies</v-chip>4
+      <v-chip v-on:click="handleFilter('movies')">Movies</v-chip>
     </v-chip-group>
     <v-row justify="space-around">
       <v-col cols="12">
-        <v-card v-for="(list, index) in lists" :key="`list-${index}`">
-          <v-card-title> {{ list.name }} </v-card-title>
-
-          <MediaLogList :list-id="list.id" />
-        </v-card>
+        <MediaLogListCart
+          v-for="(list, index) in lists"
+          :key="`list-${index}`"
+          :list="list"
+        />
       </v-col>
     </v-row>
   </v-container>
@@ -18,11 +18,11 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useStore } from "vuex";
-import MediaLogList from "@/components/MediaLogList.vue";
+import MediaLogListCart from "@/components/MediaLogListCard.vue";
 
 export default defineComponent({
   name: "MediaLog",
-  components: { MediaLogList },
+  components: { MediaLogListCart },
   computed: {
     lists() {
       const store = useStore();
@@ -34,6 +34,13 @@ export default defineComponent({
     const store = this.$store;
 
     store.dispatch("mediaLog/setListsAndItems");
+  },
+  methods: {
+    handleFilter(filter: string) {
+      const store = this.$store;
+
+      store.dispatch("mediaLog/handleFilter", filter);
+    },
   },
 });
 </script>

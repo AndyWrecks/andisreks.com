@@ -4,7 +4,11 @@ export interface State {
   mediaLog: MediaLogState;
 }
 
-export interface MediaLogState extends TrelloApi {}
+export interface MediaLogState extends TrelloApi {
+  ui: {
+    filters: string[];
+  };
+}
 
 export interface TrelloApi {
   lists: TrelloList[];
@@ -20,6 +24,7 @@ export interface TrelloList {
   pos: number;
   softLimit: null;
   subscribed: boolean;
+  category: string;
 }
 
 export interface TrelloCard {
