@@ -1,9 +1,9 @@
 require("dotenv").config();
-const express = require("express");
-const bodyParser = require("body-parser");
+import express, { Express, Request, Response } from "express";
+import * as bodyParser from "body-parser";
 const cors = require("cors");
 
-const app = express();
+const app: Express = express();
 
 // Middleware
 app.use(bodyParser.json());
@@ -21,7 +21,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(__dirname + "/public/"));
 
   // Handle SPA
-  app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html"));
+  app.get(/.*/, (req: Request, res: Response) =>
+    res.sendFile(__dirname + "/public/index.html")
+  );
 }
 
 const port = process.env.PORT || 5000;
