@@ -1,7 +1,6 @@
 const express = require("express");
-const mongodb = require("mongodb");
 const axios = require("axios");
-const fetch = require("node-fetch");
+const { loadLists, loadTrelloCards } = require("../../helpers/db");
 
 const router = express.Router();
 const mediaLogBoardId = "Hb7nAFL1";
@@ -102,22 +101,12 @@ router.get("/trello-fetch", async (req, res) => {
 
 // Delete Post
 
-const mongoUrl = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.j62du6m.mongodb.net/?retryWrites=true&w=majority`;
-
 async function loadMediaLists() {
-  const client = await mongodb.MongoClient.connect(mongoUrl, {
-    useNewUrlParser: true,
-  });
-
-  return client.db("andisReks").collection("mediaLists");
+  return loadLists();
 }
 
 async function loadMediaCards() {
-  const client = await mongodb.MongoClient.connect(mongoUrl, {
-    useNewUrlParser: true,
-  });
-
-  return client.db("andisReks").collection("mediaCards");
+  return loadTrelloCards();
 }
 
 module.exports = router;
