@@ -1,19 +1,19 @@
 <template>
   <v-container>
     <v-chip-group>
+      <v-chip v-on:click="handleFilter('movies')">All</v-chip>
       <v-chip v-on:click="handleFilter('movies')">Movies</v-chip>
+      <v-chip v-on:click="handleFilter('tv')">TV</v-chip>
+      <v-chip v-on:click="handleFilter('video-games')">Video Games</v-chip>
     </v-chip-group>
-    <v-row justify="space-around">
-      <v-col cols="12">
-        <v-sheet>
-          <MediaLogListCart
-            v-for="(list, index) in lists"
-            :key="`list-${index}`"
-            :list="list"
-          />
-        </v-sheet>
-      </v-col>
-    </v-row>
+
+    <div class="grid gird-cols-1 md:grid-cols-2 gap-6">
+      <MediaLogListCart
+        v-for="(list, index) in lists"
+        :key="`list-${index}`"
+        :list="list"
+      />
+    </div>
   </v-container>
 </template>
 
