@@ -1,13 +1,13 @@
 <template>
   <v-container>
     <v-chip-group>
-      <v-chip v-on:click="handleFilter('movies')">All</v-chip>
-      <v-chip v-on:click="handleFilter('movies')">Movies</v-chip>
-      <v-chip v-on:click="handleFilter('tv')">TV</v-chip>
-      <v-chip v-on:click="handleFilter('video-games')">Video Games</v-chip>
+      <MediaLogFilterChip :handle-filter="handleFilter('movies')" />
+      <v-chip v:model="handleFilter('movies')">Movies</v-chip>
+      <v-chip v:model="handleFilter('tv')">TV</v-chip>
+      <v-chip v:model="handleFilter('video-games')">Video Games</v-chip>
     </v-chip-group>
 
-    <div class="grid gird-cols-1 md:grid-cols-2 gap-6">
+    <div class="grid gird-cols-1 md:grid-cols-3 gap-6">
       <MediaLogListCart
         v-for="(list, index) in lists"
         :key="`list-${index}`"
@@ -21,15 +21,28 @@
 import { defineComponent } from "vue";
 import { useStore } from "vuex";
 import MediaLogListCart from "@/components/MediaLogListCard.vue";
+import MediaLogFilterChip from "@/components/MediaLogFilterChip.vue";
 
 export default defineComponent({
   name: "MediaLog",
-  components: { MediaLogListCart },
+  components: { MediaLogFilterChip, MediaLogListCart },
   computed: {
     lists() {
       const store = useStore();
 
       return store.getters["mediaLog/getLists"];
+    },
+    handleFilter: {
+      get() {
+        return true;
+      },
+      set(filter: string) {
+        const store = this.$store;
+
+        console.log({ filter });
+
+        store.dispatch("mediaLog/handleFilter", filter);
+      },
     },
   },
   mounted() {
@@ -37,12 +50,6 @@ export default defineComponent({
 
     store.dispatch("mediaLog/setListsAndItems");
   },
-  methods: {
-    handleFilter(filter: string) {
-      const store = this.$store;
-
-      store.dispatch("mediaLog/handleFilter", filter);
-    },
-  },
+  methods: {},
 });
 </script>

@@ -14,7 +14,9 @@ type Context = ActionContext<MediaLogState, State>;
 
 const getters = {
   getLists(state: MediaLogState) {
-    return state.lists;
+    return state.lists.sort((a, b) => {
+      return a.name.localeCompare(b.name);
+    });
   },
 
   getListStatus(state: MediaLogState) {
@@ -50,6 +52,11 @@ const actions = {
     });
   },
   handleFilter(context: Context, filter: string) {
+    if (filter === "all") {
+      context.commit("emptyFilters");
+      return;
+    }
+
     if (context.state.ui.filters.includes(filter)) {
       context.commit("removeFilter", filter);
       return;
@@ -69,6 +76,9 @@ const mutations = {
   },
   removeFilter(state: MediaLogState, filter: string) {
     state.ui.filters = state.ui.filters.filter((f) => f !== filter);
+  },
+  emptyFilters(state: MediaLogState) {
+    state.ui.filters = [];
   },
 };
 
