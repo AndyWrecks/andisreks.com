@@ -8,7 +8,8 @@
     "beDev": "nodemon server/index.ts",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "sh deploy.sh"
+    "deploy": "sh deploy.sh",
+    "scraper": "node server/rt-scraper.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
@@ -24,6 +25,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "jsdom": "^21.0.0",
     "mongodb": "^4.13.0",
     "postcss": "^8.4.19",
     "tailwindcss": "^3.2.4",
