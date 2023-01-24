@@ -15,6 +15,10 @@ html {
     background-color: theme('colors.background');
 }
 
+* {
+    font-family: "Roboto", "Helvetica", sans-serif !important;
+}
+
 @media print {
     html {
         font-size: 12px !important;
