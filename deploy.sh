@@ -10,5 +10,5 @@ echo 'www.andisreks.com' > CNAME
 git init
 git add -A
 git commit -m 'deploy'
-git push -f git@github.com:AndyWrecks/andisreks.com.git master:gh-pages
+git push -f git@github.com:AndyWrecks/andisreks.com.git main:gh-pages
 cd -
