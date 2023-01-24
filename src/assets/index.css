@@ -9,10 +9,18 @@ html {
 
 h1 {
     color: theme('colors.primary');
+    font-size: 3rem;
+    line-height: normal;
+}
+
+h2 {
+    font-size: 1.45rem;
 }
 
 h3 {
-    color: theme('colors.secondary')
+    color: theme('colors.secondary');
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 

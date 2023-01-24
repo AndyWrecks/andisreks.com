@@ -8,31 +8,35 @@
       <MobileLinks :links="links" />
     </v-navigation-drawer>
 
-    <v-app-bar>
-      <template v-slot:prepend>
-        <v-app-bar-nav-icon
-          class="md:hidden"
-          v-on:click="toggleNav"
-        ></v-app-bar-nav-icon>
-      </template>
+    <v-sheet class="bg-red">
+      <v-container class="pa-0">
+        <v-app-bar>
+          <template v-slot:prepend>
+            <v-app-bar-nav-icon
+              class="md:hidden"
+              v-on:click="toggleNav"
+            ></v-app-bar-nav-icon>
+          </template>
 
-      <v-app-bar-title class="text-primary text-xl mr-6">
-        <router-link to="/">
-          Andis<span class="text-secondary">Reks </span>
-        </router-link>
-      </v-app-bar-title>
+          <v-app-bar-title class="text-primary text-xl mr-6">
+            <router-link to="/">
+              Andis<span class="text-secondary">Reks </span>
+            </router-link>
+          </v-app-bar-title>
 
-      <template v-slot:append>
-        <div class="hidden md:block">
-          <v-btn
-            v-for="(item, index) in links.main"
-            :key="`desktop-item-main-${index}`"
-            :to="item.url"
-            >{{ item.name }}</v-btn
-          >
-        </div>
-      </template>
-    </v-app-bar>
+          <template v-slot:append>
+            <div class="hidden md:block">
+              <v-btn
+                v-for="(item, index) in links.main"
+                :key="`desktop-item-main-${index}`"
+                :to="item.url"
+                >{{ item.name }}</v-btn
+              >
+            </div>
+          </template>
+        </v-app-bar>
+      </v-container>
+    </v-sheet>
   </div>
 </template>
 <script lang="ts">

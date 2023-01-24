@@ -1,7 +1,5 @@
 <template>
-  <v-container
-    class="flex flex-col justify-center h-full text-center space-y-4"
-  >
+  <v-container class="flex flex-col justify-center h-full space-y-4">
     <h1>
       {{ introValue
       }}<span v-if="introTypeStatus" class="blinking-cursor">|</span>

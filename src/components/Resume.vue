@@ -182,7 +182,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 @media print {
   html {
     font-size: 12px !important;
