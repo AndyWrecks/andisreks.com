@@ -17,7 +17,9 @@
       </template>
 
       <v-app-bar-title class="text-primary text-xl mr-6">
-        Andis<span class="text-secondary">Reks </span>
+        <router-link to="/">
+          Andis<span class="text-secondary">Reks </span>
+        </router-link>
       </v-app-bar-title>
 
       <template v-slot:append>
