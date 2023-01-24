@@ -1,18 +1,97 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-container
+    class="flex flex-col justify-center h-full text-center space-y-4"
+  >
+    <h1>
+      {{ introValue
+      }}<span v-if="introTypeStatus" class="blinking-cursor">|</span>
+    </h1>
+    <h2 class="min-h-[140px] md:min-h-[70px]">
+      {{ descValue }}
+      <span v-if="descriptionTypeStatus" class="blinking-cursor">|</span>
+    </h2>
+    <div
+      class="flex flex-row space-x-4 flex-wrap transition transition-all pt-4"
+      :class="linksStatus ? 'opacity-100' : 'opacity-0'"
+    >
+      <v-btn variant="tonal" to="/about">About</v-btn>
+      <v-btn variant="tonal" to="/resume"> Experience </v-btn>
+    </div>
+  </v-container>
 </template>
 
 <script>
-
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
+  name: "HomeView",
+  components: {},
+  data() {
+    return {
+      yearsOfExperience: Math.abs(new Date(Date.now()).getUTCFullYear() - 2013),
+      introText: "Hi, I'm Andis.",
+      introValue: "",
+      descValue: "",
+      linksStatus: false,
+      introTypeStatus: true,
+      descriptionTypeStatus: false,
+      typingSpeed: 100,
+      charIndex: 0,
+    };
+  },
+  methods: {
+    typeText() {
+      if (this.introTypeStatus === true) {
+        this.introValue += this.introText.charAt(this.charIndex);
+        this.charIndex += 1;
+        setTimeout(this.typeText, this.typingSpeed);
+
+        if (this.charIndex === this.introText.length) {
+          setTimeout(() => {
+            this.typingSpeed = 50;
+            this.charIndex = 0;
+            this.introTypeStatus = false;
+            this.descriptionTypeStatus = true;
+          }, 1500);
+        }
+      }
+
+      if (this.descriptionTypeStatus === true) {
+        this.descValue += this.descText.charAt(this.charIndex);
+        this.charIndex += 1;
+        setTimeout(this.typeText, this.typingSpeed);
+
+        if (this.charIndex === this.descText.length) {
+          setTimeout(() => {
+            this.descriptionTypeStatus = false;
+            this.linksStatus = true;
+          }, 1000);
+        }
+      }
+    },
+  },
+  computed: {
+    descText() {
+      return `A Rhode Island based Front End Engineer with ${this.yearsOfExperience} years
+      of experience building websites and applications.`;
+    },
+  },
+  created() {
+    setTimeout(this.typeText, 1500);
+  },
+};
+</script>
+
+<style scoped>
+.blinking-cursor {
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: #2c3e50;
   }
 }
-</script>
+</style>
