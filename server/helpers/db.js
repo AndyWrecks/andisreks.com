@@ -5,7 +5,6 @@ const mongoUrl = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PA
 
 async function loadCollection(collection) {
   const client = await mongodb.MongoClient.connect(mongoUrl, {
-    // @ts-ignore
     useNewUrlParser: true,
   });
 
@@ -18,5 +17,8 @@ module.exports = {
   },
   loadTrelloCards: function () {
     return loadCollection("mediaCards");
+  },
+  loadSimpleMediaList: function () {
+    return loadCollection("simpleMediaList");
   },
 };

@@ -1,10 +1,11 @@
 <template>
   <v-container>
     <v-chip-group>
-      <MediaLogFilterChip :handle-filter="handleFilter('movies')" />
-      <v-chip v:model="handleFilter('movies')">Movies</v-chip>
-      <v-chip v:model="handleFilter('tv')">TV</v-chip>
-      <v-chip v:model="handleFilter('video-games')">Video Games</v-chip>
+      <MediaLogFilterChip />
+
+      <!--      <v-chip v:model="handleFilter('movies')">Movies</v-chip>-->
+      <!--      <v-chip v:model="handleFilter('tv')">TV</v-chip>-->
+      <!--      <v-chip v:model="handleFilter('video-games')">Video Games</v-chip>-->
     </v-chip-group>
 
     <div class="grid gird-cols-1 md:grid-cols-3 gap-6">
