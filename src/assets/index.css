@@ -7,6 +7,23 @@ html {
     background-color: theme('colors.background');
 }
 
+@media print {
+    html {
+        font-size: 12px !important;
+    }
+
+    html,
+    body {
+        /*changing width to 100% causes huge overflow and wrap*/
+        height: 100%;
+        overflow: hidden;
+        background: #fff;
+    }
+}
+
+
+
+
 h1 {
     color: theme('colors.primary');
     font-size: 3rem;

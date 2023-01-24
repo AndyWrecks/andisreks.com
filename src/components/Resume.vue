@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col items-stretch mx-auto w-full mb-25 pb-20 print:mb-0 print:pb-0 paper:w-paper print:w-print transform origin-top"
+    class="flex flex-col items-stretch mx-auto w-full mb-25 pb-20 print:mb-0 print:pb-0 paper:w-paper print:w-print transform origin-top resume"
   >
     <div
       class="paper-page flex flex-col h-auto paper:h-paper print:h-paper my-0 paper:my-20 print:my-0 p-4 sm:p-10 paper:p-20 paper:justify-center print:p-10 text-xl md:text-base print:text-base shadow-none paper:shadow-2xl print:shadow-none bg-ivory print:bg-transparent text-left"
@@ -181,41 +181,26 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-@media print {
-  html {
-    font-size: 12px !important;
+<style lang="scss">
+.resume {
+  h1,
+  h2 {
+    text-align: left;
   }
-}
 
-h1,
-h2 {
-  text-align: left;
-}
+  h1 {
+    font-size: 3rem;
+  }
 
-h1 {
-  font-size: 3rem;
-}
+  h2 {
+    font-size: 1.45rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.75rem;
+  }
 
-h2 {
-  font-size: 1.45rem;
-  margin-bottom: 0.5rem;
-  margin-top: 0.75rem;
-}
-
-h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-@media print {
-  html,
-  body {
-    /*changing width to 100% causes huge overflow and wrap*/
-    height: 100%;
-    overflow: hidden;
-    background: #fff;
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
   }
 }
 </style>
