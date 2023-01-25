@@ -4,8 +4,10 @@
 
     <ResumeWebLayout class="print:hidden" />
 
-    <v-bottom-navigation class="fixed md:hidden print:hidden" grow>
-      <v-btn color="primary">
+    <footer
+      class="fixed bottom-0 bg-white w-screen justify-space-between flex-grow flex flex-row h-14 md:hidden"
+    >
+      <v-btn :rounded="0" color="secondary" class="flex-grow h-full">
         <div>
           <v-icon icon="mdi-filter"></v-icon>
           Filter
@@ -21,7 +23,8 @@
       </v-btn>
 
       <v-btn
-        class="flex bg-blue flex-row items-center justify-around"
+        class="flex bg-blue flex-row items-center justify-around flex-grow h-full"
+        :rounded="0"
         variant="tonal"
         v-on:click="printResume"
       >
@@ -30,7 +33,7 @@
           <span class="ml-2"> Resume </span>
         </div>
       </v-btn>
-    </v-bottom-navigation>
+    </footer>
   </div>
 </template>
 
@@ -54,3 +57,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+.v-bottom-navigation__content {
+  justify-content: space-between;
+}
+</style>
