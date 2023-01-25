@@ -1,6 +1,7 @@
 <template>
   <div>
-    <ResumeLayout />
+    <ResumeLayout class="hidden print:block" />
+    <ResumeWebLayout class="print:hidden" />
   </div>
 </template>
 
@@ -8,9 +9,10 @@
 import { defineComponent } from "vue";
 
 import ResumeLayout from "@/components/ResumeLayout.vue";
+import ResumeWebLayout from "@/components/ResumeWebLayout.vue";
 
 export default defineComponent({
   name: "ResumeTemplate",
-  components: { ResumeLayout },
+  components: { ResumeWebLayout, ResumeLayout },
 });
 </script>

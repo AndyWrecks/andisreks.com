@@ -1,4 +1,4 @@
-import { ExperienceState, MediaLogState, State } from "@/types";
+import { Experience, ExperienceState, MediaLogState, State } from "@/types";
 import { ActionContext } from "vuex";
 import experienceData from "@/assets/static-data/experience-data";
 
@@ -7,7 +7,7 @@ const state: ExperienceState = experienceData;
 type Context = ActionContext<ExperienceState, State>;
 
 const getters = {
-  getExperiences(state: ExperienceState) {
+  getExperiences(state: ExperienceState): Experience[] {
     return state.experiences;
   },
   getSkills(state: ExperienceState) {
