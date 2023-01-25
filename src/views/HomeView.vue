@@ -4,7 +4,7 @@
       {{ introValue
       }}<span v-if="introTypeStatus" class="blinking-cursor">|</span>
     </h1>
-    <h2 class="min-h-[140px] md:min-h-[70px]">
+    <h2 class="min-h-[140px] md:min-h-[70px] md:w-1/2">
       {{ descValue }}
       <span v-if="descriptionTypeStatus" class="blinking-cursor">|</span>
     </h2>
@@ -31,7 +31,7 @@ export default {
       linksStatus: false,
       introTypeStatus: true,
       descriptionTypeStatus: false,
-      typingSpeed: 100,
+      typingSpeed: 80,
       charIndex: 0,
     };
   },
@@ -44,7 +44,7 @@ export default {
 
         if (this.charIndex === this.introText.length) {
           setTimeout(() => {
-            this.typingSpeed = 50;
+            this.typingSpeed = 30;
             this.charIndex = 0;
             this.introTypeStatus = false;
             this.descriptionTypeStatus = true;
@@ -68,8 +68,7 @@ export default {
   },
   computed: {
     descText() {
-      return `A Rhode Island based Front End Engineer with ${this.yearsOfExperience} years
-      of experience building websites and applications.`;
+      return `A Rhode Island based Front End Engineer with ${this.yearsOfExperience} years experience building websites and applications.`;
     },
   },
   created() {

@@ -5,4 +5,11 @@ module.exports = defineConfig({
   css: {
     extract: false,
   },
+  devServer: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:5000",
+      },
+    },
+  },
 });

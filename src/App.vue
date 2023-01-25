@@ -28,6 +28,7 @@ nav a.router-link-exact-active {
 import AppNav from "@/AppNav";
 
 export default {
+  name: "AndisReks",
   components: { AppNav },
 };
 </script>
