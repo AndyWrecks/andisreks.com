@@ -32,7 +32,9 @@
     "ts-node": "^10.9.1",
     "vue": "^3.2.13",
     "vue-class-component": "^8.0.0-0",
+    "vue-html2pdf": "^1.8.0",
     "vue-router": "^4.0.3",
+    "vue3-html2pdf": "^1.1.2",
     "vuetify": "^3.0.4",
     "vuex": "^4.0.2"
   },

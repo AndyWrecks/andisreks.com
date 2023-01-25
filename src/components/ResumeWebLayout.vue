@@ -40,34 +40,6 @@
         >
       </v-card-text>
     </v-card>
-
-    <v-bottom-navigation class="fixed md:hidden" grow>
-      <v-btn color="primary">
-        <div>
-          <v-icon icon="mdi-filter"></v-icon>
-          Filter
-        </div>
-
-        <v-menu activator="parent">
-          <v-list>
-            <v-list-item v-for="(item, index) in 3" :key="index" :value="index">
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-      </v-btn>
-
-      <v-btn
-        color="blue"
-        class="flex flex-row items-center justify-around"
-        variant="tonal"
-      >
-        <div>
-          <v-icon icon="mdi-download"></v-icon>
-          <span class="ml-2"> Resume </span>
-        </div>
-      </v-btn>
-    </v-bottom-navigation>
   </v-container>
 </template>
 <script lang="ts">
