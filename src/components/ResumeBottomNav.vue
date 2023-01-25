@@ -12,6 +12,7 @@
         activator="parent"
         transition="slide-y-transition"
         :close-on-content-click="false"
+        scroll-strategy="close"
       >
         <div>
           <v-list class="flex flex-col bg-white space-y-2">
