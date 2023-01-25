@@ -9,11 +9,11 @@
         id="header"
         class="flex flex-col items-middle justify-center text-center"
       >
-        <h1 class="mb-2">Andis Reks</h1>
+        <h1>Andis Reks</h1>
       </section>
 
-      <section class="flex flex-col mt-4">
-        <div>
+      <section class="flex flex-col">
+        <div class="my-2">
           <ul
             class="flex flex-col md:flex-row print:flex-row justify-start md:space-x-10 print:space-x-10"
           >

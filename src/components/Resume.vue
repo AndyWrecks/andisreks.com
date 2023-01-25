@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="mb-12">
     <ResumeLayout class="hidden print:block" />
 
     <ResumeWebLayout class="print:hidden" />
 
     <footer
-      class="fixed bottom-0 bg-white w-screen justify-space-between flex-grow flex flex-row h-14 md:hidden"
+      class="fixed bottom-0 bg-white w-screen justify-space-between print:hidden flex-grow flex flex-row h-14 md:hidden"
     >
       <v-btn :rounded="0" color="secondary" class="flex-grow h-full">
         <div>
