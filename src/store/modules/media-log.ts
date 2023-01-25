@@ -1,4 +1,4 @@
-import { MediaLogState, State, TrelloApi, TrelloList } from "@/types";
+import { MediaLogState, State, TrelloApi } from "@/types";
 import { ActionContext } from "vuex";
 import MediaLogService from "@/api/mediaLogService";
 

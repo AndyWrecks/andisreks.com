@@ -97,72 +97,14 @@
 
 <script lang="ts">
 import ResumeSkillSection from "@/components/ResumeSkillSection.vue";
+import { defineComponent } from "vue";
+import { useStore } from "vuex";
 
-export default {
+export default defineComponent({
   name: "ResumeTemplate",
   components: { ResumeSkillSection },
   data() {
     return {
-      experience: [
-        {
-          company: "Feast & Fettle",
-          position: "Front End Engineer",
-          location: "East Providence, RI",
-          time: "02/2022 - 11/2022",
-          achievements: [
-            "Rebuilt customer storefront UI in Vue",
-            "Built UI Test suite in Jest",
-            "Collaborated with stakeholders and Creative Team to improve ordering experience",
-            "Converted front-end build tooling from Webpack to Vite",
-          ],
-        },
-        {
-          company: "Google (Fitbit)",
-          position: "Software Engineer",
-          location: "Boston, MA",
-          time: "02/2021 - 02/2022",
-          achievements: [
-            "Built feature rich for enterprise Covid-19 Daily Assessment product suite",
-            "Owned/Led Tooling Migration to Google infrastructure",
-            "Orchestrated efficient microservice deployments",
-            "Introduced agile methodologies and development best practices to division to enhance product development",
-          ],
-        },
-        {
-          company: "Fitbit",
-          position: "Software Engineer",
-          location: "Boston, MA",
-          time: "05/2018 - 02/2021",
-          achievements: [
-            "Built digital visualization UI for Health Coaching web application",
-            "Delivered unit-tested feature sets informed by product requirements",
-            "Communicated technical development stages and provided design support to businesses and other stakeholders encouraging participation for on-time execution",
-          ],
-        },
-        {
-          company: "Fitbit",
-          position: "Web Developer",
-          location: "Boston, MA",
-          time: "01/2015 - 05/2018",
-          achievements: [
-            "Led cross-functional internationalization initiative using custom and vendor software to expand Fibit.com's global support",
-            "Prototyped static site generation build system for hardware marketing pages served to millions of users worldwide",
-            "Developed functional digital design concepts across various platforms to strengthen company brand and identity",
-            "Optimized asset handoff process between engineering and marketing design team",
-          ],
-        },
-        {
-          company: "TWOBOLT",
-          position: "Web Developer",
-          location: "Pawtucket, RI",
-          time: "06/2013 - 01/2015",
-          achievements: [
-            "Maintained Wordpress websites for 10+ clients",
-            "Designed email templates used in marketing campaigns",
-            "Produced and pre-flighted print material, including flyers and brochures",
-          ],
-        },
-      ],
       skills: [
         "HTML",
         "Typescript",
@@ -178,7 +120,14 @@ export default {
       projectMgmt: ["Jira", "Linear", "Monday", "Trello"],
     };
   },
-};
+  computed: {
+    experience() {
+      const store = useStore();
+
+      return store.getters["experienceStore/getExperiences"];
+    },
+  },
+});
 </script>
 
 <style lang="scss">

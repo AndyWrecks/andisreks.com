@@ -119,3 +119,20 @@ export type OMDbListing = {
   Website: string;
   Response: string;
 };
+
+export interface ExperienceState {
+  experiences: Experience[];
+}
+
+export interface Experience {
+  company: string;
+  position: string;
+  location: string;
+  time: string;
+  skills: {
+    frameworks: string[];
+    design: string[];
+    projectMgmt: string[];
+  };
+  achievements: string[];
+}
