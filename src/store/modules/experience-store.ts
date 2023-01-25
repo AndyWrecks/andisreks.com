@@ -34,10 +34,10 @@ const getters = {
     return state.ui.frameworks;
   },
   getAvailableDesign(state: ExperienceState) {
-    return state.ui.frameworks;
+    return state.ui.design;
   },
   getAvailableMgmt(state: ExperienceState) {
-    return state.ui.frameworks;
+    return state.ui.projectMgmt;
   },
 };
 

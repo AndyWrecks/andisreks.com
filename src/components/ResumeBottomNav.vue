@@ -13,8 +13,8 @@
         transition="slide-y-transition"
         :close-on-content-click="false"
       >
-        <div class="bg-red">
-          <v-list>
+        <div>
+          <v-list class="flex flex-col bg-white space-y-2">
             <ResumeFilterSection
               :entry-array="frameworks"
               title="Tech"
@@ -26,17 +26,12 @@
               color="green"
             />
             <ResumeFilterSection
-              :entry-array="frameworks"
+              :entry-array="projectMgmt"
               title="Project Management"
               color="blue"
             />
           </v-list>
         </div>
-        <!--        <v-list class="bg-green">-->
-        <!--          <v-list-item v-for="(item, index) in 3" :key="index" :value="index">-->
-        <!--            <v-list-item-title>Hello</v-list-item-title>-->
-        <!--          </v-list-item>-->
-        <!--        </v-list>-->
       </v-menu>
     </v-btn>
 
@@ -66,9 +61,9 @@ export default defineComponent({
   },
   computed: {
     ...mapGetters({
-      frameworks: "experienceStore/getFrameworks",
-      design: "experienceStore/getDesign",
-      projectMgmt: "experienceStore/getProjectMgmt",
+      frameworks: "experienceStore/getAvailableFrameworks",
+      design: "experienceStore/getAvailableDesign",
+      projectMgmt: "experienceStore/getAvailableMgmt",
     }),
   },
 });
