@@ -8,7 +8,7 @@ const experienceData = {
       skills: {
         frameworks: ["Vue", "Laravel"],
         design: ["Figma"],
-        projectMgmt: ["Linear"],
+        projectMgmt: ["Linear", "Monday"],
       },
       achievements: [
         "Rebuilt customer storefront UI in Vue",
