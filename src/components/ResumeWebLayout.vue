@@ -44,7 +44,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import { mapGetters } from "vuex";
+import { mapGetters, useStore } from "vuex";
 
 export default defineComponent({
   name: "ResumeWebLayout",
@@ -57,6 +57,11 @@ export default defineComponent({
     ...mapGetters({
       experiences: "experienceStore/getExperiences",
     }),
+  },
+  beforeMount() {
+    const store = useStore();
+
+    store.dispatch("experienceStore/setAvailableFilters");
   },
 });
 </script>

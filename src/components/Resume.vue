@@ -2,38 +2,9 @@
   <div class="mb-12">
     <ResumeLayout class="hidden print:block" />
 
-    <ResumeWebLayout class="print:hidden" />
+    <ResumeWebLayout class="print:hidden z-10" />
 
-    <footer
-      class="fixed bottom-0 bg-white w-screen justify-space-between print:hidden flex-grow flex flex-row h-14 md:hidden"
-    >
-      <v-btn :rounded="0" color="secondary" class="flex-grow h-full">
-        <div>
-          <v-icon icon="mdi-filter"></v-icon>
-          Filter
-        </div>
-
-        <v-menu activator="parent">
-          <v-list>
-            <v-list-item v-for="(item, index) in 3" :key="index" :value="index">
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-      </v-btn>
-
-      <v-btn
-        class="flex bg-blue flex-row items-center justify-around flex-grow h-full"
-        :rounded="0"
-        variant="tonal"
-        v-on:click="printResume"
-      >
-        <div>
-          <v-icon icon="mdi-download"></v-icon>
-          <span> Resumé </span>
-        </div>
-      </v-btn>
-    </footer>
+    <ResumeBottomNav class="print:hidden" :print-resume="printResume" />
   </div>
 </template>
 
@@ -42,10 +13,11 @@ import { defineComponent } from "vue";
 
 import ResumeLayout from "@/components/ResumeLayout.vue";
 import ResumeWebLayout from "@/components/ResumeWebLayout.vue";
+import ResumeBottomNav from "@/components/ResumeBottomNav.vue";
 
 export default defineComponent({
   name: "ResumeTemplate",
-  components: { ResumeWebLayout, ResumeLayout },
+  components: { ResumeBottomNav, ResumeWebLayout, ResumeLayout },
   methods: {
     /*
         Generate Report using refs and calling the

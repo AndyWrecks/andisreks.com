@@ -4,6 +4,7 @@
       :v-click-outside="toggleNav"
       temporary
       v-model="navOpen"
+      width="auto"
     >
       <MobileLinks :links="links" />
     </v-navigation-drawer>

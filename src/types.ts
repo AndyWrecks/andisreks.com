@@ -126,6 +126,12 @@ export interface ExperienceState {
   frameworks: string[];
   design: string[];
   projectMgmt: string[];
+  ui: {
+    activeFilters: string[];
+    frameworks: string[];
+    design: string[];
+    projectMgmt: string[];
+  };
 }
 
 export interface Experience {

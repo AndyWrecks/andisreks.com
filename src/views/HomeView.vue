@@ -68,7 +68,7 @@ export default {
   },
   computed: {
     descText() {
-      return `A Rhode Island based Front End Engineer with ${this.yearsOfExperience} years experience building websites and applications.`;
+      return `A Rhode Island based Front End Engineer with ${this.yearsOfExperience} years' experience building websites and applications.`;
     },
   },
   created() {
