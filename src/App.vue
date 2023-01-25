@@ -26,9 +26,11 @@ nav a.router-link-exact-active {
 </style>
 <script>
 import AppNav from "@/AppNav";
+document.title = "Andis Reks";
 
 export default {
-  name: "AndisReks",
+  title: "AndisReks",
   components: { AppNav },
+  beforeMount() {},
 };
 </script>
