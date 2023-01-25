@@ -122,6 +122,10 @@ export type OMDbListing = {
 
 export interface ExperienceState {
   experiences: Experience[];
+  skills: string[];
+  frameworks: string[];
+  design: string[];
+  projectMgmt: string[];
 }
 
 export interface Experience {

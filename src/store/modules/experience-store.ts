@@ -1,15 +1,26 @@
-import { ExperienceState, MediaLogState, State, TrelloApi } from "@/types";
+import { ExperienceState, MediaLogState, State } from "@/types";
 import { ActionContext } from "vuex";
-import MediaLogService from "@/api/mediaLogService";
 import experienceData from "@/assets/static-data/experience-data";
 
 const state: ExperienceState = experienceData;
 
-type Context = ActionContext<MediaLogState, State>;
+type Context = ActionContext<ExperienceState, State>;
 
 const getters = {
   getExperiences(state: ExperienceState) {
     return state.experiences;
+  },
+  getSkills(state: ExperienceState) {
+    return state.skills;
+  },
+  getFrameworks(state: ExperienceState) {
+    return state.frameworks;
+  },
+  getDesign(state: ExperienceState) {
+    return state.design;
+  },
+  getProjectMgmt(state: ExperienceState) {
+    return state.projectMgmt;
   },
 };
 

@@ -84,6 +84,19 @@ const experienceData = {
       ],
     },
   ],
+  skills: [
+    "HTML",
+    "Typescript",
+    "Javascript",
+    "CSS/SCSS",
+    "PHP",
+    "Python",
+    "Java",
+    "Git",
+  ],
+  frameworks: ["Vue", "React.js", "Laravel", "Mithril.js", "Jest"],
+  design: ["Figma", "Photoshop", "Illustrator"],
+  projectMgmt: ["Jira", "Linear", "Monday", "Trello"],
 };
 
 export default experienceData;
