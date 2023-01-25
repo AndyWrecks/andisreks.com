@@ -30,7 +30,7 @@
       >
         <div>
           <v-icon icon="mdi-download"></v-icon>
-          <span class="ml-2"> Resume </span>
+          <span> Resumé </span>
         </div>
       </v-btn>
     </footer>
