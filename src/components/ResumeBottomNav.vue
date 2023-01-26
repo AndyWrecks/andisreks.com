@@ -17,21 +17,7 @@
       >
         <div>
           <v-list class="flex flex-col bg-white space-y-2">
-            <ResumeFilterSection
-              :entry-array="frameworks"
-              title="Tech"
-              color="red"
-            />
-            <ResumeFilterSection
-              :entry-array="design"
-              title="Design"
-              color="green"
-            />
-            <ResumeFilterSection
-              :entry-array="projectMgmt"
-              title="Project Management"
-              color="blue"
-            />
+            <ResumeFilters />
           </v-list>
         </div>
       </v-menu>
@@ -52,21 +38,13 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import { mapGetters } from "vuex";
-import ResumeFilterSection from "@/components/ResumeFilterSection.vue";
+import ResumeFilters from "@/components/ResumeFilters.vue";
 
 export default defineComponent({
   name: "ResumeBottomNav",
-  components: { ResumeFilterSection },
+  components: { ResumeFilters },
   props: {
     printResume: {},
-  },
-  computed: {
-    ...mapGetters({
-      frameworks: "experienceStore/getAvailableFrameworks",
-      design: "experienceStore/getAvailableDesign",
-      projectMgmt: "experienceStore/getAvailableMgmt",
-    }),
   },
 });
 </script>
