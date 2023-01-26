@@ -55,7 +55,7 @@ export default defineComponent({
   },
   computed: {
     ...mapGetters({
-      experiences: "experienceStore/getExperiences",
+      experiences: "experienceStore/getFilteredExperiences",
     }),
   },
   beforeMount() {

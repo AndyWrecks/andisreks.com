@@ -73,6 +73,17 @@ const getters = {
       return availableExperienceFilters.includes(filterId);
     };
   },
+  getFilterActiveStatus(state: ExperienceState, getters: any) {
+    return (filterId: string) => {
+      const activeFilters = getters["getActiveFilters"];
+
+      if (activeFilters.length === 0) {
+        return true;
+      }
+
+      return activeFilters.includes(filterId);
+    };
+  },
 };
 
 const actions = {

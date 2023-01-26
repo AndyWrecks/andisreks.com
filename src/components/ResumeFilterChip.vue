@@ -18,16 +18,18 @@ export default defineComponent({
     color: {},
     chipValue: String,
   },
-  data() {
-    return {
-      selected: false,
-    };
-  },
   computed: {
     chipEnabled() {
       const store = useStore();
 
       return store.getters["experienceStore/getFilterEnabledStatus"](
+        this.chipValue
+      );
+    },
+    selected() {
+      const store = useStore();
+
+      return store.getters["experienceStore/getFilterActiveStatus"](
         this.chipValue
       );
     },
