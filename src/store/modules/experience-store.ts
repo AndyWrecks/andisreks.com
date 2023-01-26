@@ -1,7 +1,6 @@
-import { Experience, ExperienceState, MediaLogState, State } from "@/types";
-import { ActionContext, GetterTree } from "vuex";
+import { Experience, ExperienceState, State } from "@/types";
+import { ActionContext } from "vuex";
 import experienceData from "@/assets/static-data/experience-data";
-import { all } from "axios";
 
 const state: ExperienceState = {
   ...experienceData,
@@ -78,7 +77,7 @@ const getters = {
       const activeFilters = getters["getActiveFilters"];
 
       if (activeFilters.length === 0) {
-        return true;
+        return false;
       }
 
       return activeFilters.includes(filterId);

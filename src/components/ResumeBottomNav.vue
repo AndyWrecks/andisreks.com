@@ -1,5 +1,5 @@
 <template>
-  <footer
+  <v-bottom-navigation
     class="fixed bottom-0 bg-white w-screen justify-space-between print:hidden flex-grow flex flex-row h-14 md:hidden"
   >
     <v-btn :rounded="0" color="secondary" class="flex-grow z-30 h-full">
@@ -12,7 +12,8 @@
         activator="parent"
         transition="slide-y-transition"
         :close-on-content-click="false"
-        scroll-strategy="close"
+        scroll-strategy="reposition"
+        class="fixed"
       >
         <div>
           <v-list class="flex flex-col bg-white space-y-2">
@@ -47,7 +48,7 @@
         <span> Resumé </span>
       </div>
     </v-btn>
-  </footer>
+  </v-bottom-navigation>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
