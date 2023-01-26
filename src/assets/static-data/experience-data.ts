@@ -6,7 +6,7 @@ const experienceData = {
       location: "East Providence, RI",
       time: "02/2022 - 11/2022",
       skills: {
-        frameworks: ["Vue", "Laravel"],
+        frameworks: ["Vue", "Laravel", "Jest"],
         design: ["Figma"],
         projectMgmt: ["Linear", "Monday"],
       },

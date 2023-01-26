@@ -140,6 +140,7 @@ export interface Experience {
   location: string;
   time: string;
   skills: {
+    all?: string[];
     frameworks: string[];
     design: string[];
     projectMgmt: string[];
