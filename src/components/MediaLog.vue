@@ -40,8 +40,6 @@ export default defineComponent({
       set(filter: string) {
         const store = this.$store;
 
-        console.log({ filter });
-
         store.dispatch("mediaLog/handleFilter", filter);
       },
     },

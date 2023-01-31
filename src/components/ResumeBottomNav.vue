@@ -1,5 +1,5 @@
 <template>
-  <v-bottom-navigation
+  <footer
     class="fixed bottom-0 bg-white w-screen justify-space-between print:hidden flex-grow flex flex-row h-14 md:hidden"
   >
     <v-btn :rounded="0" color="secondary" class="flex-grow z-30 h-full">
@@ -34,7 +34,7 @@
         <span> Resumé </span>
       </div>
     </v-btn>
-  </v-bottom-navigation>
+  </footer>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";

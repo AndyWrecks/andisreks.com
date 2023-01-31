@@ -5,8 +5,15 @@
       temporary
       v-model="navOpen"
       width="auto"
+      class="fixed"
     >
       <MobileLinks :links="links" />
+
+      <div
+        class="absolute bottom-4 w-full transform left-0 grid grid-cols-2 gap-y-4"
+      >
+        <SocialLink></SocialLink>
+      </div>
     </v-navigation-drawer>
 
     <v-sheet class="bg-red">
@@ -44,10 +51,11 @@
 import { defineComponent } from "vue";
 import { useStore } from "vuex";
 import MobileLinks from "@/MobileLinks.vue";
+import SocialLink from "@/views/SocialLink.vue";
 
 export default defineComponent({
   name: "AppNav",
-  components: { MobileLinks },
+  components: { SocialLink, MobileLinks },
   data() {
     return {
       navOpen: false,
@@ -79,7 +87,6 @@ export default defineComponent({
     drawerOpen() {
       const store = useStore();
 
-      console.log(store.getters["mediaLog/getNavStatus"]);
       return store.getters["mediaLog/getNavStatus"];
     },
   },
