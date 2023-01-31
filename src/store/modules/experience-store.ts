@@ -15,7 +15,7 @@ const state: ExperienceState = {
 type Context = ActionContext<ExperienceState, State>;
 
 const getters = {
-  getExperiences(state: ExperienceState): Experience[] {
+  getExperiences(state: ExperienceState) {
     return state.experiences;
   },
   getSkills(state: ExperienceState) {
@@ -81,6 +81,14 @@ const getters = {
       }
 
       return activeFilters.includes(filterId);
+    };
+  },
+  getExperienceSkillsByTime(state: ExperienceState) {
+    const experiences = state.experiences;
+    return (time: string) => {
+      return experiences.find(
+        (experience: Experience) => experience.time === time
+      )?.skills;
     };
   },
 };

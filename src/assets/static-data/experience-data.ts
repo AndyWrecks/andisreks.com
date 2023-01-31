@@ -28,7 +28,7 @@ const experienceData = {
         projectMgmt: ["Jira"],
       },
       achievements: [
-        "Built feature rich for enterprise Covid-19 Daily Assessment product suite",
+        "Built node driven UI for enterprise Covid-19 Daily Assessment product suite",
         "Owned/Led Tooling Migration to Google infrastructure",
         "Orchestrated efficient microservice deployments",
         "Introduced agile methodologies and development best practices to division to enhance product development",
