@@ -1,7 +1,6 @@
 <template>
   <v-card :class="visibilityStatus ? '' : 'hidden'">
     <v-card-title>{{ list.name }}</v-card-title>
-    <v-divider />
 
     <MediaLogList :list-id="list.id" />
   </v-card>

@@ -13,7 +13,7 @@
       :class="linksStatus ? 'opacity-100' : 'opacity-0'"
     >
       <v-btn variant="tonal" to="/about">About</v-btn>
-      <v-btn variant="tonal" to="/resume"> Experience </v-btn>
+      <v-btn variant="tonal" to="/resume"> Resume </v-btn>
     </div>
   </v-container>
 </template>
@@ -68,7 +68,7 @@ export default {
   },
   computed: {
     descText() {
-      return `A Rhode Island based Front End Engineer with ${this.yearsOfExperience} years' experience building websites and applications.`;
+      return `A Rhode Island based Front-End Engineer with ${this.yearsOfExperience} years' experience building websites and applications.`;
     },
   },
   created() {

@@ -61,10 +61,6 @@ export default defineComponent({
             name: "Resume",
             url: "/resume",
           },
-          {
-            name: "Media Log",
-            url: "/media-log",
-          },
         ],
         side: [
           {

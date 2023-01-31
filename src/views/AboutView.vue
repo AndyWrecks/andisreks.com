@@ -3,21 +3,24 @@
     <div class="flex flex-col h-full justify-center items-start">
       <v-card flat>
         <div class="flex flex-row items-center">
-          <!--          <v-avatar size="50">-->
-          <!--            <v-img :src="require('@/assets/images/areks-profile.jpeg')"></v-img>-->
-          <!--          </v-avatar>-->
           <h1 class="mt-4">Andis Reks</h1>
         </div>
-        <h2>Front End Engineer</h2>
+        <h2>Front-End Engineer</h2>
         <h3>Providence, RI</h3>
       </v-card>
 
       <p class="md:w-1/2 mt-10">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur
-        corporis et exercitationem, facilis fugit illum molestiae nesciunt
-        provident sed suscipit? Animi delectus dolorem eos, est illum molestiae
-        neque quaerat quibusdam.
+        Hello! I am a Front-End Engineer with experience in both enterprise and
+        consumer websites and applications. I have a passion for friendly UI,
+        sustainable engineering practices, and everything in between.
       </p>
+
+      <div class="mt-10 -ml-4">
+        <SocialLink />
+      </div>
     </div>
   </v-container>
 </template>
+<script setup lang="ts">
+import SocialLink from "@/views/SocialLink.vue";
+</script>

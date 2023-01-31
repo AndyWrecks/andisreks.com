@@ -54,10 +54,14 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 /* import specific icons */
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  faLinkedin,
+  faGithub,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 
 /* add icons to the library */
-library.add(faEnvelope, faLinkedin, faLocationDot);
+library.add(faEnvelope, faLinkedin, faLocationDot, faGithub, faInstagram);
 import store from "@/store/store";
 
 createApp(App)
