@@ -10,10 +10,9 @@
 
       <v-menu
         activator="parent"
-        transition="slide-y-transition"
+        transition="none"
         :close-on-content-click="false"
         scroll-strategy="reposition"
-        class="fixed"
       >
         <div>
           <v-list class="flex flex-col bg-white space-y-2">
