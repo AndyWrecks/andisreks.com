@@ -1,12 +1,28 @@
 <template>
   <v-container>
-    <h1 class="mx-3 my-4 text-h4">Experience</h1>
-    <div class="flex flex-row justify-between md:space-x-4 mt-4">
+    <v-btn-toggle v-model="activeSection" color="primary">
+      <v-btn> Experience </v-btn>
+
+      <v-btn> Education </v-btn>
+    </v-btn-toggle>
+    <div
+      v-if="activeSection === 0"
+      class="flex flex-row justify-between md:space-x-4 mt-4"
+    >
       <ResumeFilters class="hidden md:block md:max-w-xs flex-grow" />
       <ResumeExperienceCards />
     </div>
 
-    <h1 class="mx-3 my-4 text-h4">Education</h1>
+    <div v-if="activeSection === 1">
+      <div class="grid md:grid-cols-3 gap-4 flex-grow my-4">
+        <ResumeCard
+          sub-head="Rochester Institute of Technology"
+          title="Media Arts and Technology (B.S.)"
+          subtitle="2009 - 2013"
+          time="2009 - 2013"
+        />
+      </div>
+    </div>
   </v-container>
 </template>
 <script lang="ts">
@@ -14,13 +30,14 @@ import { defineComponent } from "vue";
 import { useStore } from "vuex";
 import ResumeFilters from "@/components/ResumeFilters.vue";
 import ResumeExperienceCards from "@/components/ResumeExperienceCards.vue";
+import ResumeCard from "@/components/ResumeCard.vue";
 
 export default defineComponent({
   name: "ResumeWebLayout",
-  components: { ResumeExperienceCards, ResumeFilters },
+  components: { ResumeCard, ResumeExperienceCards, ResumeFilters },
   data() {
     return {
-      mobileFilters: true,
+      activeSection: 0,
     };
   },
   computed: {},

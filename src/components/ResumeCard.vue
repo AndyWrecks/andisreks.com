@@ -65,13 +65,15 @@ export default defineComponent({
       const skills = useStore().getters[
         "experienceStore/getExperienceSkillsByTime"
       ](this.time);
-      console.log(skills);
 
-      return [
-        { skills: skills.frameworks, color: "red" },
-        { skills: skills.design, color: "green" },
-        { skills: skills.projectMgmt, color: "blue" },
-      ];
+      if (skills) {
+        return [
+          { skills: skills.frameworks, color: "red" },
+          { skills: skills.design, color: "green" },
+          { skills: skills.projectMgmt, color: "blue" },
+        ];
+      }
+      return undefined;
     },
   },
 });
