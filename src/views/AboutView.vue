@@ -12,7 +12,13 @@
       <p class="md:w-1/2 mt-10">
         Hello! I am a Front-End Engineer with experience in both enterprise and
         consumer websites and applications. I have a passion for friendly UI,
-        sustainable engineering practices, and everything in between.
+        sustainable engineering practices, and data visualization.
+      </p>
+
+      <p class="md:w-1/2 mt-5">
+        I worked as a software engineer for Fitbit, Google, and Feast & Fettle,
+        driving projects on marketing websites, health coaching dashboards, and
+        storefront applications, as well as developing team's Agile workflows.
       </p>
 
       <div class="mt-10 -ml-4">

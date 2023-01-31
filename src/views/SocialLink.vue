@@ -16,16 +16,6 @@
         icon="fa-brands fa-linkedin"
       ></font-awesome-icon>
     </v-btn>
-    <v-btn
-      variant="plain"
-      href="https://www.instagram.com/andisreks/"
-      target="_blank"
-    >
-      <font-awesome-icon
-        class="text-3xl"
-        icon="fa-brands fa-instagram"
-      ></font-awesome-icon>
-    </v-btn>
     <v-btn variant="plain" href="mailto:andiskreks@gmail.com" target="_blank">
       <font-awesome-icon
         class="text-3xl"
