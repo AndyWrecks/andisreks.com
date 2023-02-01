@@ -3,6 +3,7 @@ import App from "./App.vue";
 import "./assets/index.scss";
 import router from "./router";
 import "@mdi/font/css/materialdesignicons.css";
+import VueGtag from "vue-gtag";
 
 import "vuetify/styles";
 import { createVuetify, ThemeDefinition } from "vuetify";
@@ -68,5 +69,21 @@ createApp(App)
   .use(store)
   .component("font-awesome-icon", FontAwesomeIcon)
   .use(router)
+  .use(
+    VueGtag,
+    {
+      config: {
+        id: "G-P1V5PTEGK8",
+        params: {
+          ad_storage: "denied",
+          analytics_storage: "denied",
+          functionality_storage: "denied",
+          personalization_storage: "denied",
+          security_storage: "denied",
+        },
+      },
+    },
+    router
+  )
   .use(vuetify)
   .mount("#app");
