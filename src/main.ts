@@ -74,13 +74,7 @@ createApp(App)
     {
       config: {
         id: "G-P1V5PTEGK8",
-        params: {
-          ad_storage: "denied",
-          analytics_storage: "denied",
-          functionality_storage: "denied",
-          personalization_storage: "denied",
-          security_storage: "denied",
-        },
+        params: {},
       },
     },
     router

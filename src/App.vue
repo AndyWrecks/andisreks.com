@@ -31,11 +31,6 @@ document.title = "Andis Reks";
 export default {
   title: "AndisReks",
   components: { AppNav },
-  beforeMount() {
-    this.$gtag.query("consent", "default", {
-      ad_storage: "denied",
-      analytics_storage: "denied",
-    });
-  },
+  beforeMount() {},
 };
 </script>
