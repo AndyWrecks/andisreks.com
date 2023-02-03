@@ -1,32 +1,59 @@
-const { loadSimpleMediaList, loadTrelloCards } = require("./helpers/db");
+const {
+  loadSimpleMediaList,
+  loadTrelloCards,
+  loadLists,
+} = require("./helpers/db");
 
 const convert = async function () {
   const mediaList = await loadSimpleMediaList();
-  const trelloList = await loadTrelloCards();
+  const trelloCards = await loadTrelloCards();
+  const trelloLists = await (await loadLists()).find({}).toArray();
 
-  await trelloList
+  await trelloCards
     .find({})
     .toArray()
     .then((data) => {
-      data.forEach((entry, index) => {
+      const dataLength = data.length;
+      let count = 1;
+
+      let updates = data.map(async (entry) => {
         const mediaData = {
           name: entry.name,
           trelloId: entry.id,
+          category: trelloLists.find((list) => list.id === entry.idList)
+            .category,
+          rank: entry.pos,
         };
 
-        mediaList.updateOne(
-          { trelloId: entry.id },
-          { $set: mediaData },
-          { upsert: true },
-          (err) => {
-            console.log(`updated ${entry.name}`);
-            if (err) {
-              console.log(err);
-            }
-          }
-        );
+        return new Promise((resolve) => {
+          ++count;
+          console.log(`Updating ${entry.name} (${count} / ${dataLength})`);
+          resolve({
+            updateOne: {
+              filter: { trelloId: entry.id },
+              update: { $set: mediaData },
+              upsert: true,
+            },
+          });
+        });
 
-        return;
+        // await mediaList.updateOne(
+        //   { trelloId: entry.id },
+        //   { $set: mediaData },
+        //   { upsert: true },
+        //   (err) => {
+        //     if (err) {
+        //       console.log(err);
+        //     }
+        //
+        //     ++count;
+        //     console.log(`${entry.name} (${count} / ${dataLength}) Complete`);
+        //   }
+        // );
+      });
+
+      return Promise.all(updates).then((updates) => {
+        mediaList.bulkWrite(updates);
       });
     });
 };
