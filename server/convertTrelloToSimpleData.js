@@ -3,6 +3,7 @@ const {
   loadTrelloCards,
   loadLists,
 } = require("./helpers/db");
+const { getOmdbTitleByName } = require("./getAndStoreMovieData");
 
 const convert = async function () {
   const mediaList = await loadSimpleMediaList();
@@ -14,7 +15,7 @@ const convert = async function () {
     .toArray()
     .then((data) => {
       const dataLength = data.length;
-      let count = 1;
+      let count = 0;
 
       let updates = data.map(async (entry) => {
         const mediaData = {
@@ -23,6 +24,9 @@ const convert = async function () {
           category: trelloLists.find((list) => list.id === entry.idList)
             .category,
           rank: entry.pos,
+          imdbId: await getOmdbTitleByName(entry.name).then(
+            (data) => data.imdbID
+          ),
         };
 
         return new Promise((resolve) => {
@@ -36,24 +40,10 @@ const convert = async function () {
             },
           });
         });
-
-        // await mediaList.updateOne(
-        //   { trelloId: entry.id },
-        //   { $set: mediaData },
-        //   { upsert: true },
-        //   (err) => {
-        //     if (err) {
-        //       console.log(err);
-        //     }
-        //
-        //     ++count;
-        //     console.log(`${entry.name} (${count} / ${dataLength}) Complete`);
-        //   }
-        // );
       });
 
       return Promise.all(updates).then((updates) => {
-        mediaList.bulkWrite(updates);
+        // mediaList.bulkWrite(updates);
       });
     });
 };
