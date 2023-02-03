@@ -4,6 +4,7 @@ const {
   loadLists,
 } = require("./helpers/db");
 const { getOmdbTitleByName } = require("./getAndStoreMovieData");
+const { list } = require("postcss");
 
 const convert = async function () {
   const mediaList = await loadSimpleMediaList();
@@ -18,15 +19,31 @@ const convert = async function () {
       let count = 0;
 
       let updates = data.map(async (entry) => {
+        const associatedTrelloList = trelloLists.find(
+          (list) => list.id === entry.idList
+        );
+
         const mediaData = {
           name: entry.name,
           trelloId: entry.id,
-          category: trelloLists.find((list) => list.id === entry.idList)
-            .category,
+          category: associatedTrelloList.category,
           rank: entry.pos,
           imdbId: await getOmdbTitleByName(entry.name).then(
             (data) => data.imdbID
           ),
+          standing: (function () {
+            const listName = associatedTrelloList.name;
+
+            if (listName.includes("Stack")) {
+              return "ranked";
+            }
+
+            if (listName.includes("Currently")) {
+              return "inProgress";
+            }
+
+            return "inQueue";
+          })(),
         };
 
         return new Promise((resolve) => {
@@ -43,7 +60,7 @@ const convert = async function () {
       });
 
       return Promise.all(updates).then((updates) => {
-        // mediaList.bulkWrite(updates);
+        mediaList.bulkWrite(updates);
       });
     });
 };
