@@ -61,7 +61,7 @@ const experienceData = {
         projectMgmt: ["Jira"],
       },
       achievements: [
-        "Led cross-functional internationalization initiative using custom and vendor software to expand Fibit.com's global support",
+        "Led cross-functional internationalization initiative using custom and vendor software to expand fitbit.com's global support",
         "Prototyped static site generation build system for hardware marketing pages served to millions of users worldwide",
         "Developed functional digital design concepts across various platforms to strengthen company brand and identity",
         "Optimized asset handoff process between engineering and marketing design team",
