@@ -1,6 +1,23 @@
 const experienceData = {
   experiences: [
     {
+      company: "IGT",
+      position: "Senior Front End Engineer",
+      location: "Providence, RI (Remote)",
+      time: "07/2023 - Current",
+      skills: {
+        frameworks: ["Vue"],
+        design: ["Figma"],
+        projectMgmt: ["Jira"],
+      },
+      achievements: [
+        "Built Custom WYSIWYG for customer legal static HTML",
+        "Piloted and enhanced upgraded CI/CD workflow",
+        "Collaborated with global teams",
+        "Investigated and implemented high priority bug fixes in legacy systems",
+      ],
+    },
+    {
       company: "Feast & Fettle",
       position: "Front End Engineer",
       location: "East Providence, RI",
