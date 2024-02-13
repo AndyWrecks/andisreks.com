@@ -11,11 +11,16 @@ const experienceData = {
         projectMgmt: ["Jira"],
       },
       achievements: [
-        "Built Custom WYSIWYG for customer legal static HTML",
-        "Piloted and enhanced upgraded CI/CD workflow",
-        "Collaborated with global teams",
+        "Built custom in-browser HTML editor for customer legal teams",
+        "Piloted and enhanced updated CI/CD workflow",
+        "Collaborated with global teams on multi-project initiative",
         "Investigated and implemented high priority bug fixes in legacy systems",
       ],
+      processAchievements: [
+          'Built Chrome plugin to automate developer dependency management on third-party application',
+          'Designed and developed WYSIWYG editor for customer legal docs',
+          'Guided version control migrated from TFS to Git'
+      ]
     },
     {
       company: "Feast & Fettle",
@@ -33,6 +38,9 @@ const experienceData = {
         "Collaborated with stakeholders and Creative Team to improve ordering experience",
         "Converted front-end build tooling from Webpack to Vite",
       ],
+      processAchievements: [
+          ""
+      ]
     },
     {
       company: "Google (Fitbit)",
@@ -62,7 +70,7 @@ const experienceData = {
         projectMgmt: ["Jira"],
       },
       achievements: [
-        "Built digital visualization UI for Health Coaching web application",
+        "Built health metric UI for Health Coaching web application",
         "Delivered unit-tested feature sets informed by product requirements",
         "Communicated technical development stages and provided design support to businesses and other stakeholders encouraging participation for on-time execution",
       ],
@@ -79,9 +87,9 @@ const experienceData = {
       },
       achievements: [
         "Led cross-functional internationalization initiative using custom and vendor software to expand fitbit.com's global support",
-        "Prototyped static site generation build system for hardware marketing pages served to millions of users worldwide",
+        // "Prototyped static site generation build system for hardware marketing pages served to millions of users worldwide",
         "Developed functional digital design concepts across various platforms to strengthen company brand and identity",
-        "Optimized asset handoff process between engineering and marketing design team",
+        // "Optimized asset handoff process between engineering and marketing design team",
       ],
     },
     {
@@ -95,9 +103,9 @@ const experienceData = {
         projectMgmt: ["Trello"],
       },
       achievements: [
-        "Maintained Wordpress websites for 10+ clients",
-        "Designed email templates used in marketing campaigns",
-        "Produced and pre-flighted print material, including flyers and brochures",
+        // "Maintained Wordpress websites for 10+ clients",
+        // "Designed email templates used in marketing campaigns",
+        // "Produced and pre-flighted print material, including flyers and brochures",
       ],
     },
   ],
