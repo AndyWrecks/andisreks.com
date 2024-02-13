@@ -65,7 +65,7 @@
                 <span class="text-gray-400">{{ job.time }}</span>
               </div>
 
-              <ul class="list-disc pl-6 mt-2">
+              <ul class="list-disc pl-6">
                 <li
                   v-for="(achievement, index) in job.achievements"
                   :key="`${job.company}-${job.time}-achievement-${index}`"
