@@ -47,35 +47,11 @@
           />
         </div>
 
-        <div id="experience">
-          <h2>Experience</h2>
-          <div class="flex flex-col space-y-4">
-            <div
-              class="flex flex-col"
-              v-for="job in experience"
-              :key="job.title"
-            >
-              <div class="flex flex-row space-x-2 items-baseline">
-                <h3>{{ job.position }}</h3>
-                <h3 class="text-primary">• {{ job.company }}</h3>
-              </div>
-
-              <div class="flex flex-row space-x-2">
-                <span>{{ job.location }}</span>
-                <span class="text-gray-400">{{ job.time }}</span>
-              </div>
-
-              <ul class="list-disc pl-6">
-                <li
-                  v-for="(achievement, index) in job.achievements"
-                  :key="`${job.company}-${job.time}-achievement-${index}`"
-                >
-                  {{ achievement }}
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <ResumePrintExperience
+          v-for="job in experience"
+          :key="`print-experience[${job.time}]`"
+          :experienceTime="job.time"
+        />
 
         <div>
           <h2>Education</h2>
@@ -98,10 +74,11 @@
 <script lang="ts">
 import ResumeSkillSection from "@/components/ResumeSkillSection.vue";
 import { mapGetters } from "vuex";
+import ResumePrintExperience from "@/components/ResumePrintExperience.vue";
 
 export default {
   name: "ResumeLayout",
-  components: { ResumeSkillSection },
+  components: { ResumePrintExperience, ResumeSkillSection },
   props: {},
   computed: {
     ...mapGetters({

@@ -6,11 +6,7 @@
       :sub-head="experience.company"
       :title="experience.position"
       :subtitle="experience.time"
-      :achievements="
-        experienceEmphasis === 'Engineering'
-          ? experience.achievements
-          : experience.processAchievements
-      "
+      :achievements="experience.achievements[experienceEmphasis]"
       :time="experience.time"
     />
   </div>

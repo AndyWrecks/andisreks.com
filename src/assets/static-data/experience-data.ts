@@ -1,3 +1,5 @@
+import { EXPERIENCE_EMHPASIS } from "@/types";
+
 const experienceData = {
   experiences: [
     {
@@ -10,18 +12,20 @@ const experienceData = {
         design: ["Figma"],
         projectMgmt: ["Jira", "CIP"],
       },
-      achievements: [
-        "Built custom in-browser HTML editor for customer legal teams",
-        "Piloted and enhanced updated CI/CD workflows",
-        "Collaborated with global teams on multi-project initiatives",
-        "Investigated and implemented high priority bug fixes in legacy systems",
-      ],
-      processAchievements: [
-        "Developed a custom in-browser HTML editor tailored for customer legal teams, enhancing efficiency and workflow.",
-        "Led the piloting and enhancement of updated CI/CD workflows, resulting in streamlined processes and improved deployment cycles.",
-        "Collaborated seamlessly with global teams on multi-project initiatives, ensuring alignment and successful project delivery.",
-        "Investigated and implemented high-priority bug fixes in legacy systems, contributing to system stability and performance optimization.",
-      ],
+      achievements: {
+        [EXPERIENCE_EMHPASIS.ENG]: [
+          "Built custom in-browser HTML editor for customer legal teams",
+          "Piloted and enhanced updated CI/CD workflows",
+          "Collaborated with global teams on multi-project initiatives",
+          "Investigated and implemented high priority bug fixes in legacy systems",
+        ],
+        [EXPERIENCE_EMHPASIS.PROCESS]: [
+          "Developed a custom in-browser HTML editor tailored for customer legal teams, enhancing efficiency and workflow.",
+          "Led the piloting and enhancement of updated CI/CD workflows, resulting in streamlined processes and improved deployment cycles.",
+          "Collaborated seamlessly with global teams on multi-project initiatives, ensuring alignment and successful project delivery.",
+          "Investigated and implemented high-priority bug fixes in legacy systems, contributing to system stability and performance optimization.",
+        ],
+      },
     },
     {
       company: "Feast & Fettle",
@@ -33,18 +37,20 @@ const experienceData = {
         design: ["Figma"],
         projectMgmt: ["Linear", "Monday"],
       },
-      achievements: [
-        "Rebuilt customer storefront UI in Vue",
-        "Built UI Test suite in Jest",
-        "Collaborated with stakeholders and Creative Team to improve ordering experience",
-        "Converted front-end build tooling from Webpack to Vite",
-      ],
-      processAchievements: [
-        "Rebuilt customer storefront UI in Vue, enhancing user experience and performance.",
-        "Implemented a comprehensive UI Test suite using Jest, ensuring robustness and reliability of the application.",
-        "Collaborated closely with stakeholders and the Creative Team to iteratively improve the ordering experience, resulting in increased customer satisfaction.",
-        "Successfully transitioned front-end build tooling from Webpack to Vite, optimizing build performance and development efficiency.",
-      ],
+      achievements: {
+        [EXPERIENCE_EMHPASIS.ENG]: [
+          "Rebuilt customer storefront UI in Vue",
+          "Built UI Test suite in Jest",
+          "Collaborated with stakeholders and Creative Team to improve ordering experience",
+          "Converted front-end build tooling from Webpack to Vite",
+        ],
+        [EXPERIENCE_EMHPASIS.PROCESS]: [
+          "Rebuilt customer storefront UI in Vue, enhancing user experience and performance.",
+          "Implemented a comprehensive UI Test suite using Jest, ensuring robustness and reliability of the application.",
+          "Collaborated closely with stakeholders and the Creative Team to iteratively improve the ordering experience, resulting in increased customer satisfaction.",
+          "Successfully transitioned front-end build tooling from Webpack to Vite, optimizing build performance and development efficiency.",
+        ],
+      },
     },
     {
       company: "Google (Fitbit)",
@@ -56,18 +62,20 @@ const experienceData = {
         design: ["Figma"],
         projectMgmt: ["Jira"],
       },
-      achievements: [
-        "Built node driven UI for enterprise Covid-19 Daily Assessment product suite",
-        "Owned/Led Tooling Migration to Google infrastructure",
-        "Orchestrated efficient microservice deployments",
-        "Introduced agile methodologies and development best practices to division to enhance product development",
-      ],
-      processAchievements: [
-        "Developed a node-driven UI for the enterprise Covid-19 Daily Assessment product suite, streamlining the assessment process and improving user experience.",
-        "Led the migration of tooling to Google infrastructure, resulting in enhanced scalability, reliability, and cost-effectiveness.",
-        "Orchestrated efficient microservice deployments, optimizing system performance and reducing downtime.",
-        "Introduced agile methodologies and development best practices to the division, fostering a culture of continuous improvement and accelerating product development.",
-      ],
+      achievements: {
+        [EXPERIENCE_EMHPASIS.ENG]: [
+          "Built node driven UI for enterprise Covid-19 Daily Assessment product suite",
+          "Owned/Led Tooling Migration to Google infrastructure",
+          "Orchestrated efficient microservice deployments",
+          "Introduced agile methodologies and development best practices to division to enhance product development",
+        ],
+        [EXPERIENCE_EMHPASIS.PROCESS]: [
+          "Developed a node-driven UI for the enterprise Covid-19 Daily Assessment product suite, streamlining the assessment process and improving user experience.",
+          "Led the migration of tooling to Google infrastructure, resulting in enhanced scalability, reliability, and cost-effectiveness.",
+          "Orchestrated efficient microservice deployments, optimizing system performance and reducing downtime.",
+          "Introduced agile methodologies and development best practices to the division, fostering a culture of continuous improvement and accelerating product development.",
+        ],
+      },
     },
     {
       company: "Fitbit",
@@ -79,16 +87,18 @@ const experienceData = {
         design: ["Figma"],
         projectMgmt: ["Jira"],
       },
-      achievements: [
-        "Built digital visualization UI for Health Coaching web application",
-        "Delivered unit-tested feature sets informed by product requirements",
-        "Communicated technical development stages and provided design support to businesses and other stakeholders encouraging participation for on-time execution",
-      ],
-      processAchievements: [
-        "Developed a digital visualization UI for the Health Coaching web application, improving user engagement and understanding of health data.",
-        "Successfully delivered unit-tested feature sets aligned with product requirements, ensuring high-quality and reliable software.",
-        "Effectively communicated technical development stages and provided design support to businesses and stakeholders, fostering collaboration and enabling on-time execution.",
-      ],
+      achievements: {
+        [EXPERIENCE_EMHPASIS.ENG]: [
+          "Built digital visualization UI for Health Coaching web application",
+          "Delivered unit-tested feature sets informed by product requirements",
+          "Communicated technical development stages and provided design support to businesses and other stakeholders encouraging participation for on-time execution",
+        ],
+        [EXPERIENCE_EMHPASIS.PROCESS]: [
+          "Developed a digital visualization UI for the Health Coaching web application, improving user engagement and understanding of health data.",
+          "Successfully delivered unit-tested feature sets aligned with product requirements, ensuring high-quality and reliable software.",
+          "Effectively communicated technical development stages and provided design support to businesses and stakeholders, fostering collaboration and enabling on-time execution.",
+        ],
+      },
     },
     {
       company: "Fitbit",
@@ -100,20 +110,20 @@ const experienceData = {
         design: ["Photoshop", "Illustrator"],
         projectMgmt: ["Jira"],
       },
-      achievements: [
-        "Led cross-functional internationalization initiative using custom and vendor software to expand fitbit.com's global support",
-        "Prototyped static site generation build system for hardware marketing pages served to millions of users worldwide",
-        "Developed functional digital design concepts across various platforms to strengthen company brand and identity",
-        "Optimized asset handoff process between engineering and marketing design team",
-      ],
-      processAchievements: [
-        [
+      achievements: {
+        [EXPERIENCE_EMHPASIS.ENG]: [
+          "Led cross-functional internationalization initiative using custom and vendor software to expand fitbit.com's global support",
+          "Prototyped static site generation build system for hardware marketing pages served to millions of users worldwide",
+          "Developed functional digital design concepts across various platforms to strengthen company brand and identity",
+          "Optimized asset handoff process between engineering and marketing design team",
+        ],
+        [EXPERIENCE_EMHPASIS.PROCESS]: [
           "Led a cross-functional internationalization initiative using custom and vendor software to expand fitbit.com's global support, enabling access to millions of users worldwide.",
           "Prototyped a static site generation build system for hardware marketing pages, resulting in efficient content delivery to millions of users worldwide.",
           "Developed functional digital design concepts across various platforms, strengthening the company's brand and identity in the market.",
           "Optimized the asset handoff process between engineering and marketing design teams, improving collaboration and efficiency.",
         ],
-      ],
+      },
     },
     {
       company: "TWOBOLT",
@@ -125,11 +135,18 @@ const experienceData = {
         design: ["Photoshop", "Illustrator", "Indesign"],
         projectMgmt: ["Trello"],
       },
-      achievements: [
-        "Maintained Wordpress websites for 10+ clients",
-        "Designed email templates used in marketing campaigns",
-        "Produced and pre-flighted print material, including flyers and brochures",
-      ],
+      achievements: {
+        [EXPERIENCE_EMHPASIS.ENG]: [
+          "Maintained Wordpress websites for 10+ clients",
+          "Designed email templates used in marketing campaigns",
+          "Produced and pre-flighted print material, including flyers and brochures",
+        ],
+        [EXPERIENCE_EMHPASIS.PROCESS]: [
+          "Maintained Wordpress websites for 10+ clients, ensuring high-quality and reliable web presence.",
+          "Designed email templates used in marketing campaigns, improving user engagement and brand recognition.",
+          "Produced and pre-flighted print material, including flyers and brochures, to support marketing and sales efforts.",
+        ],
+      },
     },
   ],
   skills: [

@@ -152,5 +152,7 @@ export interface Experience {
     design: string[];
     projectMgmt: string[];
   };
-  achievements: string[];
+  achievements: {
+    [key in EXPERIENCE_EMHPASIS]: string[];
+  };
 }

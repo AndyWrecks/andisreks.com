@@ -24,6 +24,15 @@ const getters = {
   getExperiences(state: ExperienceState) {
     return state.experiences;
   },
+  getExperienceByTime(
+    state: ExperienceState
+  ): (time: string) => Experience | undefined {
+    return (time) => {
+      return state.experiences.find(
+        (experience: Experience) => experience.time === time
+      );
+    };
+  },
   getSkills(state: ExperienceState) {
     return state.skills;
   },
