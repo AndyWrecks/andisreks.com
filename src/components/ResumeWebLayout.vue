@@ -7,10 +7,10 @@
     </v-btn-toggle>
     <div
       v-if="activeSection === 0"
-      class="flex flex-row justify-between md:space-x-4 mt-4"
+      class="flex flex-col justify-between md:space-x-4 mt-4"
     >
-      <ResumeFilters class="hidden md:block md:max-w-xs" />
-      <ResumeExperienceCards />
+      <ResumeFilters class="" />
+      <ResumeExperienceCards class="grid md:grid-cols-2 gap-4" />
     </div>
 
     <div v-if="activeSection === 1">

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col md:space-y-2">
+  <div class="flex flex-row md:space-y-2">
     <v-list-item>
       <div class="flex flex-col flex-wrap">
         <v-label>Experience Emphasis</v-label>

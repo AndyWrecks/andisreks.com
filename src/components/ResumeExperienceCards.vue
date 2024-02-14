@@ -1,5 +1,5 @@
 <template>
-  <div class="grid md:grid-cols-2 gap-4">
+  <div>
     <ResumeCard
       v-for="(experience, expIndex) in experiences"
       :key="`experience-web-${expIndex}`"
