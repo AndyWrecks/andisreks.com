@@ -126,9 +126,9 @@ const experienceData = {
         projectMgmt: ["Trello"],
       },
       achievements: [
-        // "Maintained Wordpress websites for 10+ clients",
-        // "Designed email templates used in marketing campaigns",
-        // "Produced and pre-flighted print material, including flyers and brochures",
+        "Maintained Wordpress websites for 10+ clients",
+        "Designed email templates used in marketing campaigns",
+        "Produced and pre-flighted print material, including flyers and brochures",
       ],
     },
   ],
