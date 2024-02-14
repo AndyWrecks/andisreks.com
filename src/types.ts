@@ -120,17 +120,24 @@ export type OMDbListing = {
   Response: string;
 };
 
+export enum EXPERIENCE_EMHPASIS {
+  ENG = "Engineering",
+  PROCESS = "Process",
+}
+
 export interface ExperienceState {
   experiences: Experience[];
   skills: string[];
   frameworks: string[];
   design: string[];
   projectMgmt: string[];
+
   ui: {
     activeFilters: string[];
     frameworks: string[];
     design: string[];
     projectMgmt: string[];
+    experienceEmphasis: EXPERIENCE_EMHPASIS;
   };
 }
 

@@ -1,12 +1,16 @@
 <template>
-  <div class="grid md:grid-cols-2 gap-4 flex-grow">
+  <div class="grid md:grid-cols-2 gap-4">
     <ResumeCard
       v-for="(experience, expIndex) in experiences"
       :key="`experience-web-${expIndex}`"
       :sub-head="experience.company"
       :title="experience.position"
       :subtitle="experience.time"
-      :achievements="experience.achievements"
+      :achievements="
+        experienceEmphasis === 'Engineering'
+          ? experience.achievements
+          : experience.processAchievements
+      "
       :time="experience.time"
     />
   </div>
@@ -22,6 +26,7 @@ export default defineComponent({
   computed: {
     ...mapGetters({
       experiences: "experienceStore/getFilteredExperiences",
+      experienceEmphasis: "experienceStore/getExperienceEmphasis",
     }),
   },
 });

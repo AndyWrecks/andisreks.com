@@ -35,7 +35,7 @@
           <v-chip
             v-for="(skill, skillIndex) in skillGroup.skills"
             :key="`experience-skillGroup-${groupIndex}-skill-${skillIndex}`"
-            class="ma-2"
+            class="ma-2 text-xs"
             :color="skillGroup.color"
             >{{ skill }}
           </v-chip>

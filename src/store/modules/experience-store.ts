@@ -1,4 +1,9 @@
-import { Experience, ExperienceState, State } from "@/types";
+import {
+  Experience,
+  EXPERIENCE_EMHPASIS,
+  ExperienceState,
+  State,
+} from "@/types";
 import { ActionContext } from "vuex";
 import experienceData from "@/assets/static-data/experience-data";
 
@@ -9,6 +14,7 @@ const state: ExperienceState = {
     frameworks: [],
     design: [],
     projectMgmt: [],
+    experienceEmphasis: EXPERIENCE_EMHPASIS.ENG,
   },
 };
 
@@ -90,6 +96,9 @@ const getters = {
         (experience: Experience) => experience.time === time
       )?.skills;
     };
+  },
+  getExperienceEmphasis(state: ExperienceState) {
+    return state.ui.experienceEmphasis;
   },
 };
 
@@ -176,6 +185,9 @@ const mutations = {
   },
   addActiveFilter(state: ExperienceState, filterId: string) {
     state.ui.activeFilters.push(filterId);
+  },
+  setExperienceEmphasis(state: ExperienceState, emphasis: EXPERIENCE_EMHPASIS) {
+    state.ui.experienceEmphasis = emphasis;
   },
 };
 
