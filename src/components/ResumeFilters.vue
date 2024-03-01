@@ -6,6 +6,7 @@
         <v-radio-group v-model="experienceEmphasis">
           <v-radio label="Engineering" value="Engineering"></v-radio>
           <v-radio label="Process" value="Process"></v-radio>
+          <v-radio label="Leadership" value="Leadership"></v-radio>
         </v-radio-group>
       </div>
     </v-list-item>

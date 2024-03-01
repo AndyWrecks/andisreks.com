@@ -25,6 +25,12 @@ const experienceData = {
           "Collaborated seamlessly with global teams on multi-project initiatives, ensuring alignment and successful project delivery.",
           "Investigated and implemented high-priority bug fixes in legacy systems, contributing to system stability and performance optimization.",
         ],
+        [EXPERIENCE_EMHPASIS.LEADERSHIP]: [
+          "Led the development and deployment of a custom in-browser HTML editor, significantly improving the workflow between engineers and customer legal teams.",
+          "Pioneered the adoption and optimization of CI/CD workflows for new services, reducing deployment times and enhancing team productivity.",
+          "Facilitated cross-functional collaboration with global teams, driving multi-project initiatives.",
+          "Spearheaded the investigation and resolution of high-priority bugs in legacy systems.",
+        ],
       },
     },
     {
@@ -49,6 +55,12 @@ const experienceData = {
           "Implemented a comprehensive UI Test suite using Jest, ensuring robustness and reliability of the application.",
           "Collaborated closely with stakeholders and the Creative Team to iteratively improve the ordering experience, resulting in increased customer satisfaction.",
           "Successfully transitioned front-end build tooling from Webpack to Vite, optimizing build performance and development efficiency.",
+        ],
+        [EXPERIENCE_EMHPASIS.LEADERSHIP]: [
+          "Re-engineered the customer storefront UI using Vue.js, improving new feature implementation time by 50%.",
+          "Designed and implemented a comprehensive UI testing suite with Jest.",
+          "Orchestrated a collaborative effort between stakeholders and the Creative Team to refine the ordering experience.",
+          "Transitioned the front-end build process to Vite, doubling build speed and improving developer workflow efficiency.",
         ],
       },
     },
@@ -75,6 +87,11 @@ const experienceData = {
           "Orchestrated efficient microservice deployments, optimizing system performance and reducing downtime.",
           "Introduced agile methodologies and development best practices to the division, fostering a culture of continuous improvement and accelerating product development.",
         ],
+        [EXPERIENCE_EMHPASIS.LEADERSHIP]: [
+          "Developed and launched a Node.js driven UI for the Covid-19 Daily Assessment suite, enhancing user compliance and data accuracy.",
+          "Directed the tooling migration to Google's infrastructure, ensuring seamless integration and enhancing system scalability.",
+          "Implemented Agile methodologies within the division, resulting in a 30% acceleration in product development cycles.",
+        ],
       },
     },
     {
@@ -97,6 +114,11 @@ const experienceData = {
           "Developed a digital visualization UI for the Health Coaching web application, improving user engagement and understanding of health data.",
           "Successfully delivered unit-tested feature sets aligned with product requirements, ensuring high-quality and reliable software.",
           "Effectively communicated technical development stages and provided design support to businesses and stakeholders, fostering collaboration and enabling on-time execution.",
+        ],
+        [EXPERIENCE_EMHPASIS.LEADERSHIP]: [
+          "Developed a digital visualization UI for the Health Coaching web application",
+          "Ensured the delivery of high-quality, unit-tested features in line with product requirements.",
+          "Enhanced cross-departmental communication and collaboration, significantly reducing project delivery times and fostering a culture of innovation.",
         ],
       },
     },
@@ -123,6 +145,11 @@ const experienceData = {
           "Developed functional digital design concepts across various platforms, strengthening the company's brand and identity in the market.",
           "Optimized the asset handoff process between engineering and marketing design teams, improving collaboration and efficiency.",
         ],
+        [EXPERIENCE_EMHPASIS.LEADERSHIP]: [
+          "Orchestrated an internationalization initiative, expanding Fitbit.com’s global market reach and increasing international sales.",
+          "Pioneered a static site generation system for marketing content, reducing page load times by 40% and significantly enhancing user experience.",
+          "Optimized the asset handoff process between engineering and marketing design teams, improving collaboration and efficiency.",
+        ],
       },
     },
     {
@@ -146,6 +173,7 @@ const experienceData = {
           "Designed email templates used in marketing campaigns, improving user engagement and brand recognition.",
           "Produced and pre-flighted print material, including flyers and brochures, to support marketing and sales efforts.",
         ],
+        [EXPERIENCE_EMHPASIS.LEADERSHIP]: [],
       },
     },
   ],
@@ -159,7 +187,7 @@ const experienceData = {
     "Java",
     "Git",
   ],
-  frameworks: ["Vue", "React.js", "Laravel", "Mithril.js", "Jest"],
+  frameworks: ["Vue", "React.js", "Laravel", "Mithril.js", "Angular", "Jest"],
   design: ["Figma", "Photoshop", "Illustrator"],
   projectMgmt: ["Jira", "Linear", "Monday", "Trello"],
 };

@@ -123,6 +123,7 @@ export type OMDbListing = {
 export enum EXPERIENCE_EMHPASIS {
   ENG = "Engineering",
   PROCESS = "Process",
+  LEADERSHIP = "Leadership",
 }
 
 export interface ExperienceState {

@@ -47,6 +47,7 @@
           />
         </div>
 
+        <h2>Experience</h2>
         <ResumePrintExperience
           v-for="job in experience"
           :key="`print-experience[${job.time}]`"
